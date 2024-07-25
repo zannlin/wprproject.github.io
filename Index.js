@@ -8,7 +8,6 @@ fetch("https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Cod
     return response.json(); //else it responses with the json file    
 })  //handles the promise returned by fetch
 .then(data => { //handles the promise returned by response.json
-    console.log(data);
     if (Array.isArray(data)) { // Checks if data is an array
         courses = data;  // Sets courses array to the data
         displayCourses(courses);    //calls dispay function to display the courses
