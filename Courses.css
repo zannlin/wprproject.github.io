@@ -1,0 +1,57 @@
+
+body{
+    background-color: black;
+    text-align: center;
+}
+h1{
+    color:white;
+}
+
+#courses{
+    display: flex;
+    flex-direction: row;
+}
+
+.card h2{
+    color: #FF3434;
+    margin-bottom: 1rem;
+}
+
+.card{
+    width: 20.5rem;
+    height: 32rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding:0.5em;
+    border: 1px solid white;
+    margin: 1rem;
+    display:grid;
+    grid-template-rows: 37% 5% 25%;
+}
+
+.card p{
+    padding: 1rem;
+    margin-bottom: -1rem;
+}
+
+.card img{
+    width: 98%;
+    height: 100%;
+}
+
+.priceDuration{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1.5rem);
+    column-gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.price{
+    text-align: right;
+}
+
+.duration{
+    text-align: left;
+}
