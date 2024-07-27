@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Form submitted');
       }
     });
+
 let courses = [];   //array where the json file's conent will be stored in
 
 fetch("https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Code/Main%20Files/Courses.json")   //fetch the json file from github
@@ -17,7 +18,6 @@ fetch("https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Cod
 .then(data => { //handles the promise returned by response.json
     if (Array.isArray(data)) { // Checks if data is an array
         courses = data;
-        displayCourses(courses);  // Sets courses array to the data
     } else {
         throw new Error("Fetched data is not an array");    // if not an array throw new error
     }   
@@ -33,7 +33,7 @@ function displayCourses(courses) {
         courseblock.classList.add("card")  //creates a div for each course
         //Below is where you would insert the html code of the course while using the json file for the course details
         //Ads content inside the div
-        courseblock.innerHTML = `       
+        courseblock.innerHTML = `   
             <img src="Images/gamer.webp">
             <div class="card-body">
               <h2 class="card-title">${course.title}</h2>
