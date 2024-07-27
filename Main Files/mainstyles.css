@@ -1,4 +1,155 @@
+:root {
+    --search_radius: 5rem;
+    --search_trans_dur: 0.3s;
+    --btn-color: #ff3434;
+    --btn-hover-color: grey;
+    --btn-width: 3rem;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: black;
+    height: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  
+  header nav {
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    height: 100%;
+  }
+  
+  header nav h1 {
+    color: #ff3434;
+  
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+  
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  header nav ul li {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 1rem;
+    overflow: hidden;
+    width: max(10%, 75px);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+  }
+  
+  header nav ul li a:hover {
+    background-color: grey;
+  }
+  
+  nav form {
+    position: relative;
+    width: 15rem;
+    background: var(--btn-color);
+    border-radius: var(--search_radius);
+    border: 2px solid red;
+    margin-left: 1%;
+  }
+  
+  nav input,
+  nav button {
+    height: 100%;
+    border: 0;
+    font-size: medium;
+  }
 
-h1{
-    color: blue;
-}
+  nav input[type="search"] {
+    outline: 0;
+    width: 100%;
+    padding: 0 0.8rem;
+    border-radius: var(--search_radius);
+    appearance: none;
+    background-color: black;
+    color: white;
+    position: relative;
+  
+    transition: width var(--search_trans_dur),
+      border-radius var(--search_trans_dur);
+  }
+  
+  nav button {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--btn-width);
+    height: 100%;
+    font-weight: bold;
+    background: var(--btn-color);
+    border-radius: 0 var(--search_radius) var(--search_radius) 0;
+    color: white;
+  
+    z-index: 2; /* Ensures button is above input */
+  
+    transition: opacity var(--search_trans_dur),
+      visibility var(--search_trans_dur), background-color var(--search_trans_dur);
+  }
+  
+  nav ::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  nav input:not(:placeholder-shown) {
+    border-radius: var(--search_radius) 0 0 var(--search_radius);
+    width: calc(100% - var(--btn-width));
+  }
+  
+  nav input:not(:placeholder-shown) + button {
+    opacity: 1;
+    visibility: visible; /* Show the button when input has text */
+  }
+  
+  nav button:hover {
+    background-color: var(--btn-hover-color); /* Change color on hover */
+  }
+  
+  nav button:active {
+    opacity: 75%; /* Border color when clicked */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Creates an inset shadow effect */
+  }

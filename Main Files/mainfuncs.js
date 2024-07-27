@@ -10,7 +10,6 @@ fetch("https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Cod
 .then(data => { //handles the promise returned by response.json
     if (Array.isArray(data)) { // Checks if data is an array
         courses = data;  // Sets courses array to the data
-        displayCourses(courses);    //calls dispay function to display the courses
     } else {
         throw new Error("Fetched data is not an array");    // if not an array throw new error
     }   
@@ -43,3 +42,11 @@ function displayCourses(courses) {
         courseList.appendChild(courseblock);    //Moves each new div to the bottom
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Define the handleSubmit function
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevents page reload or similar behaviour
+      console.log('Form submitted');
+    }
+  });
