@@ -26,7 +26,7 @@ function displayCourses(courses) {
         //Below is where you would insert the html code of the course while using the json file for the course details
         //Ads content inside the div
         courseblock.innerHTML = `       
-            <img src="gamer.webp">
+            <img src="Images/gamer.webp">
             <div class="card-body">
               <h2 class="card-title">${course.title}</h2>
               <p class="discription">${course.lecturers}</p>
