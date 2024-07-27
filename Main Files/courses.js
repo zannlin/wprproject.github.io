@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => { //handles the promise returned by response.json
         if (Array.isArray(data)) { // Checks if data is an array
             courses = data;
+            displayCourses(courses);  // Sets courses array to the data
         } else {
             throw new Error("Fetched data is not an array");    // if not an array throw new error
         }   
@@ -19,6 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('There was a problem with the fetch operation:', error);  //catches error and displays it in the console
     });
 
-    displayCourses(courses);  // Sets courses array to the data
+    
 
 });
