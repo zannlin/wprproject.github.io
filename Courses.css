@@ -10,9 +10,10 @@ h1{
 #courses{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
-.card h2{
+.card h3{
     color: #FF3434;
     margin-bottom: 1rem;
 }

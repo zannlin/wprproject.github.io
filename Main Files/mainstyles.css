@@ -15,6 +15,7 @@
   body {
     margin: 0;
     padding: 0;
+    background-color: #1f1f1f;
   }
   
   header {
@@ -22,6 +23,7 @@
     height: 10vh;
     padding-left: 5vw;
     padding-right: 5vw;
+    border-bottom: 2px solid #ff3434;
   }
   
   header nav {
@@ -75,10 +77,16 @@
     transition: background-color 0.3s ease-in-out;
     width: 100%;
     height: 100%;
+    color: white;
+    text-decoration: none;
+  }
+
+  #redword{
+    color:#ff3434;
   }
   
   header nav ul li a:hover {
-    background-color: grey;
+    color: #ff3434;
   }
   
   nav form {
@@ -86,7 +94,7 @@
     width: 15rem;
     background: var(--btn-color);
     border-radius: var(--search_radius);
-    border: 2px solid red;
+    border: 2px solid #ff3434;
     margin-left: 1%;
   }
   
