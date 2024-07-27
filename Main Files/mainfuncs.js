@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Define the handleSubmit function
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevents page reload or similar behaviour
+        console.log('Form submitted');
+      }
+    });
 let courses = [];   //array where the json file's conent will be stored in
 
 fetch("https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Code/Main%20Files/Courses.json")   //fetch the json file from github
@@ -9,7 +16,8 @@ fetch("https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Cod
 })  //handles the promise returned by fetch
 .then(data => { //handles the promise returned by response.json
     if (Array.isArray(data)) { // Checks if data is an array
-        courses = data;  // Sets courses array to the data
+        courses = data;
+        displayCourses(courses);  // Sets courses array to the data
     } else {
         throw new Error("Fetched data is not an array");    // if not an array throw new error
     }   
@@ -41,12 +49,4 @@ function displayCourses(courses) {
         `;
         courseList.appendChild(courseblock);    //Moves each new div to the bottom
     });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Define the handleSubmit function
-    function handleSubmit(event) {
-      event.preventDefault(); // Prevents page reload or similar behaviour
-      console.log('Form submitted');
-    }
-  });
+}    
