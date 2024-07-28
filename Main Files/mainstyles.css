@@ -25,6 +25,9 @@
     padding-right: 5vw;
     border-bottom: 2px solid #ff3434;
     margin-bottom: 0px;
+    z-index: 1000;
+    position: sticky; /* Make the navbar sticky */
+    top: 0;
   }
   
   header nav {
