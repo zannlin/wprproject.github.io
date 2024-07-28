@@ -15,14 +15,16 @@
     margin: 0;
     padding: 0;
     background-color: #1f1f1f;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   header {
-    background-color: black;
+    background-color: #1f1f1f;
     height: 10vh;
     padding-left: 5vw;
     padding-right: 5vw;
     border-bottom: 2px solid #ff3434;
+    margin-bottom: 0px;
   }
   
   header nav {

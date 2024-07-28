@@ -1,0 +1,38 @@
+#index-title-section{
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Images/home_header.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+width: 100%;
+justify-content: center; /* Centers horizontally */
+align-items: center;  
+text-align: center;  /* Centers vertically */
+height: 65vh; 
+margin-top: 0px;
+
+}
+
+
+h2{
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+    margin: 0px;
+}
+
+#index-title-section button{
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #ff3434;
+    text-align: center;
+    background-color: black;
+    padding:10px;
+    border: 0px;
+    border-radius: 50px;
+}
+
+.section-divider{
+    width: 100vw;
+}
+
