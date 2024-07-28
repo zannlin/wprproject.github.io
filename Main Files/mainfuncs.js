@@ -44,9 +44,11 @@ function displayCourses(courses) {
                 <p class="price">${course.course_code}</p>
                 <p class="duration ">${course.course_code}</p>
               </span>
-              <button>Read More</button>
+              <button id="${course.course_code}" class="readm">Read More</button>
             </div>
         `;
         courseList.appendChild(courseblock);    //Moves each new div to the bottom
-    });
-}    
+    })}
+
+    
+  

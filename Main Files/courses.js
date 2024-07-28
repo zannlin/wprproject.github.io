@@ -20,6 +20,44 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('There was a problem with the fetch operation:', error);  //catches error and displays it in the console
     });
 
+    function displayCourses(courses) {
+        let courseList = document.getElementById("courses");    //courselist is set to a div with courses as an id
+        courses.forEach(course => { 
+            const courseblock = document.createElement("div");
+            courseblock.classList.add("card")  //creates a div for each course
+            //Below is where you would insert the html code of the course while using the json file for the course details
+            //Ads content inside the div
+            courseblock.innerHTML = `   
+                <img src="Images/${course.title}.webp">
+                <div class="card-body">
+                  <h3 class="card-title">${course.title}</h3>
+                  <p class="discription">${course.lecturers}</p>
+                  <span class="priceDuration">
+                    <p class="price ">Price</p>
+                    <p class="duration ">Duration</p>
+                    <p class="price">${course.course_code}</p>
+                    <p class="duration ">${course.course_code}</p>
+                  </span>
+                  <button id="${course.course_code}" class="readm">Read More</button>
+                </div>
+            `;
+            courseList.appendChild(courseblock);    //Moves each new div to the bottom
+
+            
+        })
+        trackbutton();
+    }
+    
+    function trackbutton(){
+        let numRMButtons = document.querySelectorAll(".card button").length;   //counts all the buttons within the card class
+        for(let i = 0;i< numRMButtons;i++){
+        document.querySelectorAll(".readm")[i].addEventListener("click", function(){ //adds an eventlistener to each of these buttons.
+            let clicked = this.id;  //gets the id of the button pressed
+            console.log(clicked);
+        });
+    }
+    }
     
 
 });
+

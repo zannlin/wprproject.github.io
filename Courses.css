@@ -1,10 +1,14 @@
 
 body{
     background-color: black;
-    text-align: center;
 }
 h1{
     color:white;
+}
+
+#courhead{
+    text-align: center;
+    font-size: 400%;
 }
 
 #courses{
@@ -55,4 +59,8 @@ h1{
 
 .duration{
     text-align: left;
+}
+
+.invisible{
+    display: none;
 }

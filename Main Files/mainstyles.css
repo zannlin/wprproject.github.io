@@ -2,7 +2,6 @@
     --search_radius: 5rem;
     --search_trans_dur: 0.3s;
     --btn-color: #ff3434;
-    --btn-hover-color: grey;
     --btn-width: 3rem;
   }
   
@@ -114,6 +113,7 @@
     background-color: black;
     color: white;
     position: relative;
+    
   
     transition: width var(--search_trans_dur),
       border-radius var(--search_trans_dur);
@@ -139,7 +139,7 @@
   }
   
   nav ::placeholder {
-    color: white;
+    color: rgb(136, 136, 136);
     opacity: 1; /* Firefox */
   }
   
@@ -160,4 +160,8 @@
   nav button:active {
     opacity: 75%; /* Border color when clicked */
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Creates an inset shadow effect */
+  }
+
+  form button{
+    cursor: pointer;
   }
