@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="Images/${course.title}.webp">
                 <div class="card-body">
                   <h3 class="card-title">${course.title}</h3>
-                  <p class="discription">${course.lecturers}</p>
+                  <p class="discription">${course.short_discription}</p>
                   <span class="priceDuration">
                     <p class="price ">Price</p>
                     <p class="duration ">Duration</p>

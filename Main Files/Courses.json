@@ -23,7 +23,8 @@
           "Lecture Hall A, Main Building",
           "Computer Lab 1, IT Wing",
           "Computer Lab 2, IT Wing"
-        ]
+        ],
+        "short_discription":"Gain essential IT skills in software development, networking, and database management. Ideal for entry-level roles or further studies."
       },
       {
         "title": "Diploma in Game Development",
@@ -49,7 +50,8 @@
           "Game Design Studio, Creative Arts Building",
           "Computer Lab 3, IT Wing",
           "Multimedia Lab, Creative Arts Building"
-        ]
+        ],
+        "short_discription":"Receive hands-on training in game design, programming, and multimedia production. Prepare for a career in the gaming industry."
       },
       {
         "title": "BSc Computer Science",
@@ -78,7 +80,8 @@
           "Lecture Hall B, Main Building",
           "Computer Lab 4, IT Wing",
           "Research Lab, Science Building"
-        ]
+        ],
+        "short_discription":"Explore advanced topics like algorithms, data structures, and AI. Prepare for careers in technology, research, and development."
       },
       {
         "title": "Masters in Computer Science",
@@ -105,6 +108,7 @@
           "Lecture Hall C, Graduate Building",
           "Advanced Computing Lab, Research Wing",
           "Data Science Lab, Science Building"
-        ]
+        ],
+        "short_discription":"Focus on algorithms, machine learning, data science, and cybersecurity. Prepare for leadership roles in technology and research."
       }
 ] 
