@@ -1,89 +1,89 @@
 :root {
-  --search_radius: 5rem;
-  --search_trans_dur: 0.3s;
-  --btn-color: #ff3434;
-  --btn-width: 3rem;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #1f1f1f;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
-  background-color: #1f1f1f;
-  height: 10vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  border-bottom: 2px solid #ff3434;
-  margin-bottom: 0px;
-  z-index: 1000;
-  position: sticky; /* Make the navbar sticky */
-  top: 0;
-}
-
-header nav {
-  display: flex;
-  align-items: center;
-  font-size: medium;
-  height: 100%;
-}
-
-header nav h1 {
-  color: #ff3434;
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-  width: fit-content;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-}
-
-header nav ul {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-header nav ul li {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  text-align: center;
-  margin: 0 1rem;
-  overflow: hidden;
-  width: max(10%, 75px);
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-header nav ul li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease-in-out;
-  width: 100%;
-  height: 100%;
-  color: white;
-  text-decoration: none;
-}
+    --search_radius: 5rem;
+    --search_trans_dur: 0.3s;
+    --btn-color: #ff3434;
+    --btn-width: 3rem;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f1f;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  header {
+    background-color: #1f1f1f;
+    height: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    border-bottom: 2px solid #ff3434;
+    margin-bottom: 0px;
+    z-index: 1000; /* Keeps the navbar above other elements on the page*/
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Keeps the navbar attached to the very top of the page, instead of having it float around.*/
+  }
+  
+  header nav {
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    height: 100%;
+  }
+  
+  header nav h1 {
+    color: #ff3434;
+  
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+  
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  header nav ul li {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 1rem;
+    overflow: hidden;
+    width: max(10%, 75px);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+  }
 
 #redword {
   color: #ff3434;
