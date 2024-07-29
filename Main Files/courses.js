@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             courseList.appendChild(courseblock);    //Moves each new div to the bottom
 
             
-        })
+        });
         trackbutton();
     }
     
