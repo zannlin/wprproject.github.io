@@ -85,88 +85,120 @@
     text-decoration: none;
   }
 
-  #redword{
-    color:#ff3434;
-  }
-  
-  header nav ul li a:hover {
-    color: #ff3434;
-  }
-  
-  nav form {
-    position: relative;
-    width: 15rem;
-    background: var(--btn-color);
-    border-radius: var(--search_radius);
-    border: 2px solid #ff3434;
-    margin-left: 1%;
-  }
-  
-  nav input,
-  nav button {
-    height: 100%;
-    border: 0;
-    font-size: medium;
-  }
+#redword {
+  color: #ff3434;
+}
 
-  nav input[type="search"] {
-    outline: 0;
-    width: 100%;
-    padding: 0 0.8rem;
-    border-radius: var(--search_radius);
-    appearance: none;
-    background-color: black;
-    color: white;
-    position: relative;
-    
-  
-    transition: width var(--search_trans_dur),
-      border-radius var(--search_trans_dur);
-  }
-  
-  nav button {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: var(--btn-width);
-    height: 100%;
-    font-weight: bold;
-    background: var(--btn-color);
-    border-radius: 0 var(--search_radius) var(--search_radius) 0;
-    color: white;
-  
-    z-index: 2; /* Ensures button is above input */
-  
-    transition: opacity var(--search_trans_dur),
-      visibility var(--search_trans_dur), background-color var(--search_trans_dur);
-  }
-  
-  nav ::placeholder {
-    color: rgb(136, 136, 136);
-    opacity: 1; /* Firefox */
-  }
-  
-  nav input:not(:placeholder-shown) {
-    border-radius: var(--search_radius) 0 0 var(--search_radius);
-    width: calc(100% - var(--btn-width));
-  }
-  
-  nav input:not(:placeholder-shown) + button {
-    opacity: 1;
-    visibility: visible; /* Show the button when input has text */
-  }
-  
-  nav button:hover {
-    background-color: var(--btn-hover-color); /* Change color on hover */
-  }
-  
-  nav button:active {
-    opacity: 75%; /* Border color when clicked */
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Creates an inset shadow effect */
-  }
+header nav ul li a:hover {
+  color: #ff3434;
+}
 
-  form button{
-    cursor: pointer;
-  }
+nav form {
+  position: relative;
+  width: 15rem;
+  background: var(--btn-color);
+  border-radius: var(--search_radius);
+  border: 2px solid #ff3434;
+  margin-left: 1%;
+}
+
+nav input,
+nav button {
+  height: 100%;
+  border: 0;
+  font-size: medium;
+}
+
+nav input[type="search"] {
+  outline: 0;
+  width: 100%;
+  padding: 0 0.8rem;
+  border-radius: var(--search_radius);
+  appearance: none;
+  background-color: black;
+  color: white;
+  position: relative;
+
+  transition: width var(--search_trans_dur),
+    border-radius var(--search_trans_dur);
+}
+
+nav button {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  height: 100%;
+  font-weight: bold;
+  background: var(--btn-color);
+  border-radius: 0 var(--search_radius) var(--search_radius) 0;
+  color: white;
+
+  z-index: 2; /* Ensures button is above input */
+
+  transition: opacity var(--search_trans_dur),
+    visibility var(--search_trans_dur), background-color var(--search_trans_dur);
+}
+
+nav ::placeholder {
+  color: rgb(136, 136, 136);
+  opacity: 1; /* Firefox */
+}
+
+nav input:not(:placeholder-shown) {
+  border-radius: var(--search_radius) 0 0 var(--search_radius);
+  width: calc(100% - var(--btn-width));
+}
+
+nav input:not(:placeholder-shown) + button {
+  opacity: 1;
+  visibility: visible; /* Show the button when input has text */
+}
+
+nav button:hover {
+  background-color: var(--btn-hover-color); /* Change color on hover */
+}
+
+nav button:active {
+  opacity: 75%; /* Border color when clicked */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Creates an inset shadow effect */
+}
+
+form button {
+  cursor: pointer;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.footer_item {
+  padding-top: 10%;
+}
+
+.footer_item1 {
+  grid-column: 1 / span 3;
+  color: red;
+  border-bottom: 3px solid white;
+  padding-top: 3.5%;
+  padding-bottom: 3.5%;
+}
+
+.footer_item2 {
+  border-right: 2px solid white;
+}
+
+.footer_item3 {
+  padding-left: 7.5%;
+  border-right: 2px solid white;
+}
+
+.footer_item4 {
+}
