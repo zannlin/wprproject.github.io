@@ -14,7 +14,7 @@ margin-top: 0px;
 
 
 h2{
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: white;
     text-align: center;
     padding-top: 10%;
@@ -32,7 +32,9 @@ h2{
     border-radius: 50px;
 }
 
-.section-divider{
+#index-learn-section .section-divider{
     width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 
