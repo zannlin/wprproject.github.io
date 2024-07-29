@@ -11,6 +11,8 @@
           "Information Systems",
           "Professional Practice in IT"
         ],
+        "course_duration": "1 year",
+        "course_cost_peryear": 53000,
         "course_code": "HCIT100",
         "lecturers": [
           "Dr. Alice Johnson",
@@ -35,6 +37,8 @@
           "Game Project Management",
           "Game Development Project"
         ],
+        "course_duration": "2 years",
+        "course_cost_peryear": 55000, 
         "course_code": "DGD200",
         "lecturers": [
           "Prof. Emily Davis",
@@ -62,6 +66,8 @@
           "Networks and Security",
           "Capstone Project"
         ],
+        "course_duration": "3 years",
+        "course_cost_peryear": 78000,
         "course_code": "BSC301",
         "lecturers": [
           "Dr. Michael Anderson",
@@ -87,6 +93,8 @@
           "Research Methods in Computer Science",
           "Thesis Project"
         ],
+        "course_duration":"2 years",
+        "course_cost_peryear":  69000,
         "course_code": "MSC500",
         "lecturers": [
           "Dr. Jane Williams",

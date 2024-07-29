@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
                   <span class="priceDuration">
                     <p class="price ">Price</p>
                     <p class="duration ">Duration</p>
-                    <p class="price">${course.course_code}</p>
-                    <p class="duration ">${course.course_code}</p>
+                    <p class="price">${course.course_cost_peryear} per year</p>
+                    <p class="duration ">${course.course_duration}</p>
                   </span>
                   <button id="${course.course_code}" class="readm">Read More</button>
                 </div>
