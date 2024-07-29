@@ -8,13 +8,17 @@ h1{
 
 #courhead{
     text-align: center;
-    font-size: 400%;
+    font-size: 500%;
 }
 
 #courses{
     display: flex;
+    gap: 20px;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    width: 58%;
+    margin: auto;
 }
 
 .card h3{
