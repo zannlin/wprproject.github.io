@@ -171,6 +171,55 @@ form button {
 /* #endregion */
 
 @media (min-width: 320px) and (max-width: 480px) {
+  header {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+
+  .navbar {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-evenly;
+  }
+
+  header h1 {
+    font-size: x-large;
+    width: fit-content;
+    margin: 0; 
+  }
+
+  header nav {
+    display: none;
+    width: 100%;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    background: linear-gradient(
+      to bottom, /* Direction of the gradient */
+      var(--background-color), /* Starting color */
+      rgba(54, 48, 48, 0.5) /* End color*/
+    );
+  }
+
+  header nav ul li {
+    padding: 1% 0;
+    width: 100%;
+    border-top: 2px solid var(--primary-color);
+  }  
+
+  header nav form {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+    background-color: var(--transparent-color);
+    font-size: x-large;
+    border: 0;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
