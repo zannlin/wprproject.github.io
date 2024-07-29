@@ -11,6 +11,16 @@
   box-sizing: border-box;
 }
 
+button{
+  padding: 10px 20px;
+  border: 0px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  background-color: #ff3434;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -142,8 +152,10 @@ nav button:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Creates an inset shadow effect */
 }
 
+
 form button {
   cursor: pointer;
+  padding-top: 1px;
 }
 /* #endregion */
 
