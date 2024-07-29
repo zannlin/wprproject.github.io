@@ -5,6 +5,7 @@
   --btn-width: 3rem;
   --transparent-color: rgba(0, 0, 0, 0);
   --background-color: #1f1f1f;
+  --primary-color: #ff3434;
 }
 
 *,
@@ -20,7 +21,7 @@ button{
   font-size: 1.2rem;
   color: white;
   text-align: center;
-  background-color: #ff3434;
+  background-color: var(--primary-color);
 }
 
 body {
@@ -30,22 +31,27 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* #region Header */
 header {
   display: flex;
   background-color: var(--background-color);
   height: 10vh;
   padding: 0 5vw;
-  border-bottom: 2px solid #ff3434;
+  border-bottom: 2px solid var(--primary-color);
   z-index: 9999;
   position: sticky;
   top: 0;
 }
 
+.navbar{
+  width: 50%;
+  margin: auto;
+}
+
 header h1 {
-  color: #ff3434;
+  color: var(--primary-color);
   margin: auto;
   text-wrap: nowrap;
-  width: 50%;
 }
 
 header nav {
@@ -77,20 +83,20 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: #ff3434;
+  color: var(--primary-color);
 }
 
 .hamburger-btn {
   display: none;
 }
 
-/* #region Search */
+/* Searchbar */
 nav form {
   position: relative;
   width: 15rem;
   background: var(--btn-color);
   border-radius: var(--search_radius);
-  border: 2px solid #ff3434;
+  border: 2px solid var(--primary-color);
   margin-left: 1%;
 }
 
@@ -158,12 +164,80 @@ nav button:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Creates an inset shadow effect */
 }
 
-
 form button {
   cursor: pointer;
   padding-top: 1px;
 }
 /* #endregion */
+
+@media (min-width: 320px) and (max-width: 480px) {
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  header {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+
+  .navbar {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-evenly;
+  }
+
+  header h1 {
+    font-size: x-large;
+    width: fit-content;
+    margin: 0; 
+  }
+
+  header nav {
+    display: none;
+    width: 100%;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    background: linear-gradient(
+      to bottom, /* Direction of the gradient */
+      var(--background-color), /* Starting color */
+      rgba(54, 48, 48, 0.5) /* End color*/
+    );
+  }
+
+  header nav ul li {
+    padding: 1% 0;
+    width: 100%;
+    border-top: 2px solid var(--primary-color);
+  }  
+
+  header nav form {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+    background-color: var(--transparent-color);
+    font-size: x-large;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+}
+
+#firstWord {
+  color: var(--primary-color);
+}
+
 
 /* #region Footer */
 footer {
@@ -196,23 +270,3 @@ footer {
   border-right: 2px solid white;
 }
 /* #endregion */
-
-@media (min-width: 320px) and (max-width: 480px) {
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-}
-
-@media (min-width: 1025px) and (max-width: 1200px) {
-}
-
-@media (min-width: 1201px) and (max-width: 1400px) {
-}
-
-#redword {
-  color: #ff3434;
-}
