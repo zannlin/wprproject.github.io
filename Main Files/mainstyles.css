@@ -25,9 +25,9 @@
     padding-right: 5vw;
     border-bottom: 2px solid #ff3434;
     margin-bottom: 0px;
-    z-index: 1000;
+    z-index: 1000; /* Keeps the navbar above other elements on the page*/
     position: sticky; /* Make the navbar sticky */
-    top: 0;
+    top: 0; /* Keeps the navbar attached to the very top of the page, instead of having it float around.*/
   }
   
   header nav {
