@@ -50,5 +50,20 @@ function displayCourses(courses) {
         courseList.appendChild(courseblock);    //Moves each new div to the bottom
     })}
 
+const hamburgerBTN = document.querySelector('.hamburger-btn');
+const nav = document.querySelector('header nav');
+  
+hamburgerBTN.addEventListener('click', () => {
+    hamburgerBTN.classList.toggle('active');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    });
+
+
+
+
+
+
+    
+
     
   

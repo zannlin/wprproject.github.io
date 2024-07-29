@@ -3,6 +3,8 @@
   --search_trans_dur: 0.3s;
   --btn-color: #ff3434;
   --btn-width: 3rem;
+  --transparent-color: rgba(0, 0, 0, 0);
+  --background-color: #1f1f1f;
 }
 
 *,
@@ -14,13 +16,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #1f1f1f;
+  background-color: var(--background-color);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
   display: flex;
-  background-color: #1f1f1f;
+  background-color: var(--background-color);
   height: 10vh;
   padding: 0 5vw;
   border-bottom: 2px solid #ff3434;
@@ -29,18 +31,18 @@ header {
   top: 0;
 }
 
+header h1 {
+  color: #ff3434;
+  margin: auto;
+  text-wrap: nowrap;
+  width: 50%;
+}
+
 header nav {
   display: flex;
   align-items: center;
   font-size: medium;
   height: 100%;
-  width: 50%;
-}
-
-header h1 {
-  color: #ff3434;
-  margin: auto;
-  text-wrap: nowrap;
   width: 50%;
 }
 
@@ -66,6 +68,10 @@ header nav ul li a {
 
 header nav ul li a:hover {
   color: #ff3434;
+}
+
+.hamburger-btn {
+  display: none;
 }
 
 /* #region Search */
@@ -153,7 +159,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   padding-left: 2%;
   padding-right: 2%;
-  background-color: #1f1f1f;
+  background-color: var(--background-color);
   color: white;
 }
 
@@ -183,6 +189,7 @@ footer {
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
+  
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
