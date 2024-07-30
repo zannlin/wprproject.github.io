@@ -22,7 +22,7 @@ h1{
 }
 
 .card h3{
-    color: #FF3434;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -33,7 +33,7 @@ h1{
     color: white;
     text-align: center;
     padding:0.5em;
-    border: 2px solid #FF3434;
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
     margin: 1rem;
     display:grid;
