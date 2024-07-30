@@ -1,29 +1,133 @@
 #index-title-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url(Images/home_header.jpg) center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(Images/home_header.jpg) center/cover no-repeat;
   text-align: center;
-  height: 65vh;
+  height: 50vh;
   margin-top: 0;
 }
 
-h2{
-    font-size: 4.5rem;
-    color: white;
-    text-align: center;
-    padding-top: 10%;
-    margin: 0;
+h2 {
+  font-size: 4.5rem;
+  color: white;
+  text-align: center;
+  padding-top: 10%;
+  margin: 0;
 }
 
-#index-title-section button {
+h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: left;
+  margin: 0;
+}
+
+#index-title-section p {
   display: inline-block;
   font-size: 1.5rem;
-  color: var(--primary-color);
-  background-color: var(--background-color);
+  color: white;
+  background-color: var(--primary-color);
   padding: 10px;
   margin: 5px;
   border-radius: 50px;
 }
 
-#index-learn-section .section-divider{
-    width: 100vw;
+#index-learn-section .section-divider {
+  width: 100vw;
+}
+
+#index-howitworks-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#index-howitworks-section h2 {
+  padding-top: 5%;
+}
+
+#index-howitworks-section img {
+  width: 100%;
+  height: auto;
+}
+
+#index-howitworks-section p {
+  color: white;
+}
+
+.grid-item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.grid-item2 {
+  grid-column: 1;
+  grid-row: 2;
+  padding: 10% 5%;
+  border-right: 2px solid white;
+}
+
+.grid-item3 {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 10% 5%;
+}
+
+@media (max-width: 480px) {
+  #index-howitworks-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto); 
+  }
+
+  .grid-item1, .grid-item2, .grid-item3 {
+    width: 100%; /* Ensure items take full width to align correctly */
+  }
+
+  .grid-item1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .grid-item2 {
+    grid-column: 1;
+    grid-row: 2;
+    border-right: 0;
+    padding: 5%;
+  }
+
+  .grid-item3 {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 0 5%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #index-howitworks-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto); 
+  }
+
+  .grid-item1, .grid-item2, .grid-item3 {
+    width: 100%; /* Ensure items take full width to align correctly */
+  }
+
+  .grid-item1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .grid-item2 {
+    grid-column: 1;
+    grid-row: 2;
+    border-right: 0;
+    padding: 5%;
+  }
+
+  .grid-item3 {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 0 5%;
+  }
+  
 }

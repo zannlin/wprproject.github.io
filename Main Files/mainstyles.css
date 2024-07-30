@@ -170,7 +170,7 @@ form button {
 }
 /* #endregion */
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   header {
     display: block;
     height: auto;
@@ -275,6 +275,8 @@ form button {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+
+
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
