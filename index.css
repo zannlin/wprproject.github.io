@@ -24,10 +24,11 @@ h2{
 #index-title-section button {
   display: inline-block;
   font-size: 1.5rem;
-  color: #ff3434;
+  color: var(--primary-color);
   text-align: center;
-  background-color: black;
+  background-color: var(--background-color);
   padding: 10px;
+  margin: 5px;
   border: 0px;
   border-radius: 50px;
 }

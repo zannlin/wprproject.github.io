@@ -78,3 +78,4 @@ function handleResize() {
 window.addEventListener("resize", function () {
   handleResize();
 });
+
