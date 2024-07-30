@@ -77,12 +77,6 @@ h1 {
 /* #region popup heading */
 
 #index-title-section {
-  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(Images/home_header.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;*/
   justify-content: center; /* Centers horizontally */
   align-items: center;
   text-align: center; /* Centers vertically */
@@ -99,3 +93,32 @@ h2 {
 }
 
 /* #endregion */
+
+#courseDetail{
+  color:white;
+}
+
+#courseDetail h3{
+  font-size: 26px;
+  color: var(--primary-color);
+}
+
+
+table, td{
+}
+
+.profilePhoto{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.Modue{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,auto);
+}
+
+.Modue h3{
+  grid-row: 1;
+}

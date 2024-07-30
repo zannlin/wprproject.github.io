@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  resetheading();
   let courses = []; //array where the json file's conent will be stored in
 
   fetch(
@@ -69,54 +70,84 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleCourseCicked(clicked, courses) {
     removeAndAdd();
-    let courseList = document.getElementById("courses");
+    let courseInfoblock = document.getElementById("courseDetail");
     courses.forEach((course) => {
       if (course.course_code == clicked) {
-        const courseblock = document.createElement("div");
-        courseblock.classList.add("card");
-        courseblock.innerHTML = `   
-                <img src="Images/${course.title}.webp">
-                <div class="card-body">
-                  <h3 class="card-title">${course.title}</h3>
-                  <p class="discription">${course.short_discription}</p>
-                  <span class="priceDuration">
-                    <p class="price ">Price</p>
-                    <p class="duration ">Duration</p>
-                    <p class="price">R${course.course_cost_peryear} /year</p>
-                    <p class="duration">${course.course_duration}</p>
-                  </span>
-                  <button id="${course.course_code}" class="readm">Read More</button>
-                </div>
-            `;
-        courseList.appendChild(courseblock);
+        
+        let lecturers = course.lecturers;
+        let modules = course.modules;
+        let venues = course.venues;
 
+        let lecRow1 = "";
+        lecturers.forEach(lecturer =>{
+          lecRow1 = `${lecRow1} <td>${lecturer}</td>`
+        });
+
+        let modhtml = "";
+        modules.forEach(module =>{
+          modhtml = `${modhtml} <tr><td>${module}</td></tr>`
+        });
+
+        let venhtml ="";
+        venues.forEach(venue =>{
+          venhtml = `${venhtml} <tr><td>${venue}</td></tr>`
+        })
+
+
+
+
+        courseInfoblock.innerHTML = ` 
+                <h3>About the course</h3>
+                <p class="desctiption">${course.full_description}</p>
+                <h3>Lecturers</h3>
+                <table>
+                <tr>${lecRow1}</tr>
+                <tr><td><img src="Images/SpongeBob.jpg" class="profilePhoto"></td><td><img src="Images/Joker.jpg" class="profilePhoto"></td><td><img src="Images/FlintLockwood.jpg" class="profilePhoto"></td>
+                </tr>
+                </table>
+                <span class="Modue">
+                <h3>Modules</h3>
+                <table>${modhtml}</table>
+                <h3>Venues</h3>
+                <table>${venhtml}</table>
+                </span>
+            `;
+
+        //Heading image and text
         document.querySelector("#index-title-section h2").textContent = `${course.title}`;
         document.getElementById("index-title-section").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('Images/${course.title}.webp') no-repeat scroll center`;
-        document.getElementById("index-title-section").style.backgroundSize = 'cover';
+        document.getElementById("index-title-section").style.backgroundSize =
+          "cover";
       }
     });
   }
 
+  function resetheading() {
+    //adding the heading's img and text
+    document.getElementById(
+      "index-title-section"
+    ).style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('Images/home_header.jpg') no-repeat scroll center`;
+    document.getElementById("index-title-section").style.backgroundSize =
+      "cover";
+    document.querySelector("#index-title-section h2").textContent = "Courses";
+  }
+
+  //Removes cards Adds button and section
   function removeAndAdd() {
+    //removes cards
     let cards = document.querySelectorAll(".card"); //Selects all cards and adds the invisible class to it
     cards.forEach((element) => {
       element.classList.add("invisible");
     });
 
-    //Removing the courses heading and adding the new heading and image
-    document.querySelector("#courhead").classList.add("invisible");
-    document
-      .querySelector("#index-title-section")
-      .classList.remove("invisible");
-
-    //Adding the back button
+    //Adds the back button
     const newButt = document.createElement("button");
     newButt.classList.add("back");
-    document
-      .querySelector("#courses")
-      .parentNode.insertBefore(newButt, document.querySelector("#courses"));
-    newButt.textContent = "< Back";
+    document.querySelector("#courses").parentNode.insertBefore(newButt, document.querySelector("#courses"));
+    newButt.textContent = "Back";
+    document.querySelector("#courseDetail").classList.remove("invisible");
   }
 });
 
