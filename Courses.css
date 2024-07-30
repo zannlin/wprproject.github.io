@@ -1,25 +1,24 @@
-
-body{
-    background-color: black;
+body {
+  background-color: black;
 }
 
-h1{
+h1 {
     color:white;
 }
 
-#courhead{
-    text-align: center;
-    font-size: 500%;
+#courhead {
+  text-align: center;
+  font-size: 500%;
 }
 
-#courses{
-    display: flex;
-    gap: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 58%;
-    margin: auto;
+#courses {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 58%;
+  margin: auto;
 }
 
 .card h3{
@@ -41,32 +40,63 @@ h1{
     grid-template-rows: 37% 5% 25%;
 }
 
-.card p{
-    padding: 1rem;
-    margin-bottom: -1rem;
+.card p {
+  padding: 1rem;
+  margin-bottom: -1rem;
 }
 
-.card img{
-    width: 98%;
-    height: 100%;
+.card img {
+  width: 98%;
+  height: 100%;
 }
 
-.priceDuration{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1.5rem);
-    column-gap: 2rem;
-    margin-bottom: 4rem;
+.priceDuration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1.5rem);
+  column-gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.price{
-    text-align: right;
+.price {
+  text-align: right;
 }
 
-.duration{
-    text-align: left;
+.duration {
+  text-align: left;
 }
 
-.invisible{
-    display: none;
+.invisible {
+  display: none;
 }
+
+.back{
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+/* #region popup heading */
+
+#index-title-section {
+  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(Images/home_header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;*/
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  text-align: center; /* Centers vertically */
+  height: 65vh;
+  margin-top: 0px;
+}
+
+h2 {
+  font-size: 4.5rem;
+  color: white;
+  text-align: center;
+  padding-top: 10%;
+  margin: 0px;
+}
+
+/* #endregion */
