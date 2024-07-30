@@ -1,71 +1,101 @@
-
-body{
-    background-color: black;
+body {
+  background-color: black;
 }
-h1{
-    color:white;
-}
-
-#courhead{
-    text-align: center;
-    font-size: 500%;
+h1 {
+  color: white;
 }
 
-#courses{
-    display: flex;
-    gap: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 58%;
-    margin: auto;
+#courhead {
+  text-align: center;
+  font-size: 500%;
 }
 
-.card h3{
-    color: #FF3434;
-    margin-bottom: 1rem;
+#courses {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 58%;
+  margin: auto;
 }
 
-.card{
-    width: 20.5rem;
-    height: 32rem;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding:0.5em;
-    border: 2px solid #FF3434;
-    border-radius: 10px;
-    margin: 1rem;
-    display:grid;
-    grid-template-rows: 37% 5% 25%;
+.card h3 {
+  color: #ff3434;
+  margin-bottom: 1rem;
 }
 
-.card p{
-    padding: 1rem;
-    margin-bottom: -1rem;
+.card {
+  width: 20.5rem;
+  height: 32rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0.5em;
+  border: 2px solid #ff3434;
+  border-radius: 10px;
+  margin: 1rem;
+  display: grid;
+  grid-template-rows: 37% 5% 25%;
 }
 
-.card img{
-    width: 98%;
-    height: 100%;
+.card p {
+  padding: 1rem;
+  margin-bottom: -1rem;
 }
 
-.priceDuration{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1.5rem);
-    column-gap: 2rem;
-    margin-bottom: 4rem;
+.card img {
+  width: 98%;
+  height: 100%;
 }
 
-.price{
-    text-align: right;
+.priceDuration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1.5rem);
+  column-gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.duration{
-    text-align: left;
+.price {
+  text-align: right;
 }
 
-.invisible{
-    display: none;
+.duration {
+  text-align: left;
 }
+
+.invisible {
+  display: none;
+}
+
+.back{
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+/* #region popup heading */
+
+#index-title-section {
+  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(Images/home_header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;*/
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  text-align: center; /* Centers vertically */
+  height: 65vh;
+  margin-top: 0px;
+}
+
+h2 {
+  font-size: 4.5rem;
+  color: white;
+  text-align: center;
+  padding-top: 10%;
+  margin: 0px;
+}
+
+/* #endregion */

@@ -1,564 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Courses</title>
-    <link rel="stylesheet" href="Courses.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="Main Files/mainstyles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="Courses.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Main Files/mainstyles.css" />
+  </head>
+  <body>
     <header>
-        <div class="navbar">
-            <h1>StartSmart University</h1>
-            <button class="hamburger-btn">&#9776;</button>
-        </div>
-        
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Enroll.html">Enroll</a></li>
-            <li><a href="Courses.html" id="redword">Courses</a></li>
-          </ul>
-         
-          <form role="search">
-            <input
-              id="search"
-              type="search"
-              placeholder="Search..."
-              autofocus
-              required
-            />
-            <button type="submit"><i class="fas fa-search"></i></button>
-          </form>
-        
-        </nav>
-      </header>
+      <div class="navbar">
+        <h1>StartSmart University</h1>
+        <button class="hamburger-btn">&#9776;</button>
+      </div>
 
-        <h1 id="courhead">Courses</h1>
-        <div id="courses">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Enroll.html">Enroll</a></li>
+          <li><a href="Courses.html" id="redword">Courses</a></li>
+        </ul>
 
+        <form role="search">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search..."
+            autofocus
+            required
+          />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </nav>
+    </header>
+
+    <h1 id="courhead">Courses</h1>
+
+    <section id="index-title-section" class="invisible">
+      <h2>Start your Journey Today...</h2>
+    </section>
+
+    <main id="courses"></main>
+
+    <main id="courseDetail">
+      <div class="CourseDrop">
+        <button onclick="toggleDropdown('HCIT')">
+          Higher Certificate in IT
+        </button>
+        <div id="HCIT" class="CourseDrop-content">
+          <div class="Courseblock">
+            <div class="CourseInfo">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Duration</td>
+                    <td>3 Years</td>
+                  </tr>
+                  <tr>
+                    <td>NQF</td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td>Credits</td>
+                    <td>350</td>
+                  </tr>
+                  <tr>
+                    <td>Corse Code</td>
+                    <td>HCIT100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="paragraphs">
+              <p>
+                The Higher Certificate in IT provides a comprehensive
+                introduction to the field of information technology. This
+                one-year program is designed to equip students with essential IT
+                skills, making them proficient in software development,
+                networking, and database management. Ideal for those seeking
+                entry-level positions or wishing to further their studies, this
+                course lays a solid foundation in both theoretical knowledge and
+                practical application.
+              </p>
+              <div class="LecNdVen">
+                <h4>Lecturers:</h4>
+                <div class="SubOptInfo">
+                  <ul>
+                    <li>Dr. Alice Johnson</li>
+                    <li>Prof. Mark Smith</li>
+                    <li>Dr. Linda Thompson</li>
+                  </ul>
+                </div>
+                <h4>Venues:</h4>
+                <ul>
+                  <li>Lecture Hall A, Main Building</li>
+                  <li>Computer Lab 1, IT Wing</li>
+                  <li>Computer Lab 2, IT Wing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="CourseDrop">
+            <button onclick="toggleDropdown('HCITY1')">
+              First year subjects
+            </button>
+            <div id="HCITY1" class="CourseDrop-content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th></th>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Introduction to Programming</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Database Systems</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Network Security</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="CourseDrop">
+            <button onclick="toggleDropdown('HCITY2')">
+              Second year subjects
+            </button>
+            <div id="HCITY2" class="CourseDrop-content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th></th>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Web Development Basics</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>IT Support and Maintenance</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Information Systems</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="CourseDrop">
+            <button onclick="toggleDropdown('HCITY3')">
+              Third year subjects
+            </button>
+            <div id="HCITY3" class="CourseDrop-content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th></th>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Software Engineering</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Artificial Intelligence</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Professional Practice in IT</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-    
+      </div>
+    </main>
+
     <script src="Main Files/mainfuncs.js"></script>
     <script src="Main Files/courses.js"></script>
-
-    <div class="CourseDrop">
-      <button onclick="toggleDropdown('HCIT')">Higher Certificate in IT</button>
-      <div id="HCIT" class="CourseDrop-content">
-          <div class="Courseblock">
-              <div class="CourseInfo">
-                  <table>
-                      <tbody>
-                          <tr>
-                              <td>Duration</td>
-                              <td>3 Years</td>
-                          </tr>
-                          <tr>
-                              <td>NQF</td>
-                              <td>7</td>
-                          </tr>
-                          <tr>
-                              <td>Credits</td>
-                              <td>350</td>
-                          </tr>
-                          <tr>
-                              <td>Corse Code</td>
-                              <td>HCIT100</td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-              <div class="paragraphs">
-                  <p>The Higher Certificate in IT provides a comprehensive introduction to the field of information technology. This one-year program is designed to equip students with essential IT skills, making them proficient in software development, networking, and database management. Ideal for those seeking entry-level positions or wishing to further their studies, this course lays a solid foundation in both theoretical knowledge and practical application.</p>
-              <div class="LecNdVen">
-                  <h4>Lecturers:</h4>
-                  <div class="SubOptInfo">
-                  <ul>
-                  <li>Dr. Alice Johnson</li>
-                  <li>Prof. Mark Smith</li>
-                  <li>Dr. Linda Thompson</li> 
-                  </ul>
-                  </div>
-                  <h4>Venues:</h4>
-                  <ul>
-                      <li>Lecture Hall A, Main Building</li>                          
-                      <li>Computer Lab 1, IT Wing</li>
-                      <li>Computer Lab 2, IT Wing</li> 
-                      </ul>
-              </div>
-              </div>
-          </div>
-          <div class="CourseDrop">
-              <button onclick="toggleDropdown('HCITY1')">First year subjects</button>
-              <div id="HCITY1" class="CourseDrop-content">
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Course</th>
-                              <th></th> <!--Reggie asked for this column-->
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>Introduction to Programming</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Database Systems</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Network Security</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-          <div class="CourseDrop">
-              <button onclick="toggleDropdown('HCITY2')">Second year subjects</button>
-              <div id="HCITY2" class="CourseDrop-content">
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Course</th>
-                              <th></th><!--Reggie asked for this column-->
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>Web Development Basics</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>IT Support and Maintenance</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Information Systems</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-          <div class="CourseDrop">
-              <button onclick="toggleDropdown('HCITY3')">Third year subjects</button>
-              <div id="HCITY3" class="CourseDrop-content">
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Course</th>
-                              <th></th><!--Reggie asked for this column-->
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>Software Engineering</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Artificial Intelligence</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Professional Practice in IT</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="CourseDrop">
-      <button onclick="toggleDropdown('DGD')">Diploma in Game Development</button>
-      <div id="DGD" class="CourseDrop-content">
-          <div class="Courseblock">
-              <div class="CourseInfo">
-                  <table>
-                      <tbody>
-                          <tr>
-                              <td>Duration</td>
-                              <td>3 Years</td>
-                          </tr>
-                          <tr>
-                              <td>NQF</td>
-                              <td>7</td>
-                          </tr>
-                          <tr>
-                              <td>Credits</td>
-                              <td>320</td>
-                          </tr>
-                          <tr>
-                              <td>Corse Code</td>
-                              <td>DGD200</td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-              <div class="paragraphs">
-                  <p>The Diploma in Game Development is a two-year program designed to immerse students in the exciting world of game design and development. Through a combination of theory and practical experience, students will learn the intricacies of game programming, design, and multimedia production. Graduates will be well-equipped to enter the gaming industry with a strong portfolio of work and a deep understanding of the game development process.</p>
-                  <div class="LecNdVen">
-                      <h4>Lecturers:</h4>
-                      <div class="SubOptInfo">
-                      <ul>
-                      <li>Prof. Emily Davis</li>
-                      <li>Dr. Robert Lee</li>
-                      <li>Mr. John Williams</li> 
-                      </ul>
-                      </div>
-                      <h4>Venues:</h4>
-                      <ul>
-                          <li>Game Design Studio, Creative Arts Building</li>                          
-                          <li>Computer Lab 3, IT Wing</li>
-                          <li>Multimedia Lab, Creative Arts Building</li> 
-                          </ul>
-                  </div>
-              </div>
-          </div>
-          <div class="CourseDrop">
-              <button onclick="toggleDropdown('DGDY1')">First year subjects</button>
-              <div id="DGDY1" class="CourseDrop-content">
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Course</th>
-                              <th></th><!--Reggie asked for this column-->
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>Game Design Principles</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Introduction to Game Programming</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Advanced Game Programming</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-          <div class="CourseDrop">
-              <button onclick="toggleDropdown('DGDY2')">Second year subjects</button>
-              <div id="DGDY2" class="CourseDrop-content">
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Course</th>
-                              <th></th><!--Reggie asked for this column-->
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>3D Modeling and Animation</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Game Audio Design</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                          <tr>
-                              <td>Game Project Management</td>
-                              <td></td><!--Reggie asked for this column-->
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-              <div class="CourseDrop">
-                  <button onclick="toggleDropdown('DGDY3')">Third year subjects</button>
-                  <div id="DGDY3" class="CourseDrop-content">
-                      <table>
-                          <thead>
-                              <tr>
-                                  <th>Course</th>
-                                  <th></th><!--Reggie asked for this column-->
-                              </tr>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td>User Experience Design</td>
-                                  <td></td><!--Reggie asked for this column-->
-                              </tr>
-                              </tr>
-                              <tr>
-                                  <td>User Interface Design</td>
-                                  <td><!--Reggie asked for this column-->
-                                  </tr></td>
-                              </tr>
-                              <tr>
-                                  <td>Game Development Project</td>
-                                  <td></td><!--Reggie asked for this column-->
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
-          </div>
-          </div>
-  </div>
-  <div class="CourseDrop">
-                  <button onclick="toggleDropdown('BScCS')">BSc Computer Science</button>
-                  <div id="BScCS" class="CourseDrop-content">
-                      <div class="Courseblock">
-                          <div class="CourseInfo">
-                              <table>
-                                  <tbody>
-                                      <tr>
-                                          <td>Duration</td>
-                                          <td>3 Years</td>
-                                      </tr>
-                                      <tr>
-                                          <td>NQF</td>
-                                          <td>8</td>
-                                      </tr>
-                                      <tr>
-                                          <td>Credits</td>
-                                          <td>430</td>
-                                      </tr>
-                                      <tr>
-                                          <td>Corse Code</td>
-                                          <td>BSC301</td>
-                                      </tr>
-                                  </tbody>
-                              </table>
-                          </div>
-                          <div class="paragraphs">
-                              <p>The Bachelor of Science in Computer Science is a three-year program that delves into the core and advanced aspects of computer science. This degree offers a robust curriculum covering topics from algorithms and data structures to artificial intelligence and machine learning. Students will engage in both theoretical studies and practical projects, preparing them for diverse careers in technology, research, and development sectors.
-                              </p>
-                              <div class="LecNdVen">
-                                  <h4>Lecturers:</h4>
-                                  <div class="SubOptInfo">
-                                  <ul>
-                                  <li>Dr. Michael Anderson</li>
-                                  <li>Prof. Susan Clark</li>
-                                  <li>Dr. Karen Martinez</li> 
-                                  </ul>
-                                  </div>
-                                  <h4>Venues:</h4>
-                                  <ul>
-                                      <li>Lecture Hall B, Main Building</li>                         
-                                      <li>Computer Lab 4, IT Wing</li>
-                                      <li>Research Lab, Science Building</li> 
-                                      </ul>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="CourseDrop">
-                          <button onclick="toggleDropdown('BScCSY1')">First year subjects</button>
-                          <div id="BScCSY1" class="CourseDrop-content">
-                              <table>
-                                  <thead>
-                                      <tr>
-                                          <th>Course</th>
-                                          <th></th><!--Reggie asked for this column-->
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                          <td>Introduction to Computer Science</td>
-                                          <td></td><!--Reggie asked for this column-->
-                                      </tr>
-                                      <tr>
-                                          <td>Data Structures and Algorithms</td>
-                                          <td></td><!--Reggie asked for this column-->
-                                      </tr>
-                                      <tr>
-                                          <td>Computer Architecture</td>
-                                          <td></td><!--Reggie asked for this column-->
-                                      </tr>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                      <div class="CourseDrop">
-                          <button onclick="toggleDropdown('BScCSY2')">Second year subjects</button>
-                          <div id="BScCSY2" class="CourseDrop-content">
-                              <table>
-                                  <thead>
-                                      <tr>
-                                          <th>Course</th>
-                                          <th></th><!--Reggie asked for this column-->
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                          <td>Operating Systems</td>
-                                          <td></td><!--Reggie asked for this column-->
-                                      </tr>
-                                      <tr>
-                                          <td>Software Engineering</td>
-                                          <td></td><!--Reggie asked for this column-->
-                                      </tr>
-                                      <tr>
-                                          <td>Database Systems</td>
-                                          <td></td><!--Reggie asked for this column-->
-                                      </tr>
-                                  </tbody>
-                              </table>
-                          </div>
-                          <div class="CourseDrop">
-                              <button onclick="toggleDropdown('BScCSY3')">Third year subjects</button>
-                              <div id="BScCSY3" class="CourseDrop-content">
-                                  <table>
-                                      <thead>
-                                          <tr>
-                                              <th>Course</th>
-                                              <th></th><!--Reggie asked for this column-->
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                          <tr>
-                                              <td>Artificial Intelligence</td>
-                                              <td></td><!--Reggie asked for this column-->
-                                          </tr>
-                                          <tr>
-                                              <td>Machine Learning</td>
-                                              <td></td><!--Reggie asked for this column-->
-                                          </tr>
-                                          <tr>
-                                              <td>Networks and Security</td>
-                                              <td></td><!--Reggie asked for this column-->
-                                          </tr>
-                                      </tbody>
-                                  </table>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-  </div>
-  <div class="CourseDrop">
-                          <button onclick="toggleDropdown('MCS')">Masters in Computer Science</button>
-                          <div id="MCS" class="CourseDrop-content">
-                              <div class="Courseblock">
-                                  <div class="CourseInfo">
-                                      <table>
-                                          <tbody>
-                                              <tr>
-                                                  <td>Duration</td>
-                                                  <td>3 Years</td>
-                                              </tr>
-                                              <tr>
-                                                  <td>NQF</td>
-                                                  <td>9</td>
-                                              </tr>
-                                              <tr>
-                                                  <td>Credits</td>
-                                                  <td>500</td>
-                                              </tr>
-                                              <tr>
-                                                  <td>Corse Code</td>
-                                                  <td>MSC500</td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </div>
-                                  <div class="paragraphs">
-                                      <p>The Masters in Computer Science program offers an advanced study of computer science, providing students with in-depth knowledge and skills in areas such as algorithms, machine learning, data science, and cybersecurity. This two-year program is designed for students who wish to deepen their understanding of computer science and prepare for leadership roles in technology, research, and academia. Through a combination of coursework, research, and practical projects, students will gain expertise in both theoretical concepts and real-world applications.</p>
-                                      <div class="LecNdVen">
-                                          <h4>Lecturers:</h4>
-                                          <div class="SubOptInfo">
-                                          <ul>
-                                          <li>Dr. Alice Johnson</li>
-                                          <li>Prof. Mark Smith</li>
-                                          <li>Dr. Linda Thompson</li> 
-                                          </ul>
-                                          </div>
-                                          <h4>Venues:</h4>
-                                          <ul>
-                                              <li>Lecture Hall A, Main Building</li>                          
-                                              <li>Computer Lab 1, IT Wing</li>
-                                              <li>Computer Lab 2, IT Wing</li> 
-                                              </ul>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="CourseDrop">
-                                  <button onclick="toggleDropdown('MCSY1')">First year subjects</button>
-                                  <div id="MCSY1" class="CourseDrop-content">
-                                      <table>
-                                          <thead>
-                                              <tr>
-                                                  <th>Course</th>
-                                                  <th></th><!--Reggie asked for this column-->
-                                              </tr>
-                                          </thead>
-                                          <tbody>
-                                              <tr>
-                                                  <td>Advanced Algorithms</td>
-                                                  <td></td><!--Reggie asked for this column-->
-                                              </tr>
-                                              <tr>
-                                                  <td>Machine Learning and Artificial Intelligence</td>
-                                                  <td></td><!--Reggie asked for this column-->
-                                              </tr>
-                                              <tr>
-                                                  <td>Data Science and Big Data Analytics</td>
-                                                  <td></td><!--Reggie asked for this column-->
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </div>
-                              </div>
-                              <div class="CourseDrop">
-                                  <button onclick="toggleDropdown('MCSY2')">Second year subjects</button>
-                                  <div id="MCSY2" class="CourseDrop-content">
-                                      <table>
-                                          <thead>
-                                              <tr>
-                                                  <th>Course</th>
-                                                  <th></th><!--Reggie asked for this column-->
-                                              </tr>
-                                          </thead>
-                                          <tbody>
-                                              <tr>
-                                                  <td>Advanced Software Engineering</td>
-                                                  <td></td><!--Reggie asked for this column-->
-                                              </tr>
-                                              <tr>
-                                                  <td>Cybersecurity and Cryptography</td>
-                                                  <td></td><!--Reggie asked for this column-->
-                                              </tr>
-                                              <tr>
-                                                  <td>Cloud Computing and Virtualization</td>
-                                                  <td></td><!--Reggie asked for this column-->
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </div>
-                                  <div class="CourseDrop">
-                                      <button onclick="toggleDropdown('MCSY3')">Third year subjects</button>
-                                      <div id="MCSY3" class="CourseDrop-content">
-                                          <table>
-                                              <thead>
-                                                  <tr>
-                                                      <th>Course</th>
-                                                      <th></th><!--Reggie asked for this column-->
-                                                  </tr>
-                                              </thead>
-                                              <tbody>
-                                                  <tr>
-                                                      <td>Research Methods in Computer Science</td>
-                                                      <td></td><!--Reggie asked for this column-->
-                                                  </tr>
-                                                  <tr>
-                                                      <td>Thesis Project</td>
-                                                      <td></td><!--Reggie asked for this column-->
-                                                  </tr>
-                                              </tbody>
-                                          </table>
-                                      </div>
-                                  </div>
-                          </div>
-  </div>
-</div>
-</body>
+  </body>
 </html>
