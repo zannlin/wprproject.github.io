@@ -80,23 +80,4 @@ function displayCourses(courses) {
   });
 }
 
-hamburgerBTN.addEventListener("click", () => {
-  hamburgerBTN.classList.toggle("active");
-  nav.style.display = nav.style.display === "block" ? "none" : "block";
-});
-
-function handleResize() {
-  if (window.innerWidth > 768) {
-    // Adjust this breakpoint as needed
-    nav.style.display = "flex"; // Show nav when viewport is larger than breakpoint
-    hamburgerBTN.classList.remove("active"); // Ensure button is not active
-  } else {
-    nav.style.display = "none"; // Hide nav on smaller viewports
-  }
-}
-
-// Create to fix nav becoming block and then needing to go back to flex
-window.addEventListener("resize", function () {
-  handleResize();
-});
 
