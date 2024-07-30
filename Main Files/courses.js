@@ -83,6 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
           lecRow1 = `${lecRow1} <td>${lecturer}</td>`
         });
 
+        let lecRow2 = "";
+        lecturers.forEach(lecturer =>{
+          lecRow2 = `${lecRow2} <td><img src="Images/${lecturer}.jpg" class="profilePhoto"></td>`
+        });
+
         let modhtml = "";
         modules.forEach(module =>{
           modhtml = `${modhtml} <tr><td>${module}</td></tr>`
@@ -102,8 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Lecturers</h3>
                 <table>
                 <tr>${lecRow1}</tr>
-                <tr><td><img src="Images/SpongeBob.jpg" class="profilePhoto"></td><td><img src="Images/Joker.jpg" class="profilePhoto"></td><td><img src="Images/FlintLockwood.jpg" class="profilePhoto"></td>
-                </tr>
+                <tr>${lecRow2}</tr>
                 </table>
                 <span class="Modue">
                 <h3>Modules</h3>
