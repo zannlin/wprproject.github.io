@@ -20,23 +20,23 @@ h1 {
   margin: auto;
 }
 
-.card h3 {
-  color: #ff3434;
-  margin-bottom: 1rem;
+.card h3{
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.card {
-  width: 20.5rem;
-  height: 32rem;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 0.5em;
-  border: 2px solid #ff3434;
-  border-radius: 10px;
-  margin: 1rem;
-  display: grid;
-  grid-template-rows: 37% 5% 25%;
+.card{
+    width: 20.5rem;
+    height: 32rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding:0.5em;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    margin: 1rem;
+    display:grid;
+    grid-template-rows: 37% 5% 25%;
 }
 
 .card p {
