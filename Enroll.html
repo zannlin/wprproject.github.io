@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Main Files/mainstyles.css">
+    <link rel="stylesheet" href="Enroll.css">
+    <script src="Enroll.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+         <h1>StartSmart University</h1>
+         <button class="hamburger-btn">&#9776;</button>
+       </div>
+ 
+       <nav>
+         <ul>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="Apply.html" id="redword">Apply</a></li>
+           <li><a href="Courses.html" >Courses</a></li>
+         </ul>
+        
+         <form role="search">
+           <input
+             id="search"
+             type="search"
+             placeholder="Search..."
+             autofocus
+             required
+           />
+           <button type="submit"><i class="fas fa-search"></i></button>
+         </form>
+       
+       </nav>
+     </header>
+
+      <div class="form-container">
+        <h2>Enrollment Form</h2>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="student-id">Student ID</label>
+                <input type="text" id="student-id" name="student-id" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="hcit100">Higher Certificate in IT</option>
+                    <option value="dgd200">Diploma in Game Development</option>
+                    <option value="bsc301">BSc in Computer Science</option>
+                    <option value="msc500">Masters in Computer Science</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Reason for Enrollment</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <div class="form-group-button">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div id="countdown"></div>
+    <script src="Main Files/mainfuncs.js"></script>
+</body>
+</html>

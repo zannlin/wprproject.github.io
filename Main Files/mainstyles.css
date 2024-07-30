@@ -283,7 +283,7 @@ form button {
 @media (min-width: 1201px) and (max-width: 1400px) {
 }
 
-#firstWord {
+#redword {
   color: var(--primary-color);
 }
 
@@ -317,5 +317,79 @@ footer {
 .footer_item3 {
   padding-left: 7.5%;
   border-right: 2px solid white;
+}
+/* #endregion */
+
+/* #region CourseBody */
+
+.Courseblock {
+  display: flex;
+  align-items: flex-start;
+  gap: 1%; 
+}
+
+.CourseInfo {
+  overflow: auto;
+  width: 20%;
+}
+
+.CourseInfo table {
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: left;
+}
+
+.CourseInfo th {
+
+  color: #000000;
+  padding: 5px;
+}
+
+.CourseInfo td {
+  border: 1px solid #dededf;
+
+  color: #000000;
+  padding: 5px;
+}
+
+
+
+.CourseDrop {
+  margin-top: 20px;
+}
+
+.CourseDrop-content {
+  display: none;
+  border: 1px solid #dededf;
+  padding: 10px;
+
+}
+
+.CourseDrop-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.CourseDrop-content th,
+.CourseDrop-content td {
+  border: 1px solid #dededf;
+  padding: 5px;
+  text-align: left;
+}
+
+.show {
+  display: block;
+}
+
+.LecNdVen {
+  display: flex;
+}
+
+.SubOptInfo{
+  display:inline-block;
+  margin-right: 10%;
 }
 /* #endregion */
