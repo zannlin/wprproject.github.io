@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             parentBlock.appendChild(courseInfoblock);
 
-        //Heading image and text
+        //Heading card,image, and text
         const mainSeg = document.querySelector("#index-title-section");
         let enrollCard = document.createElement("div");
         enrollCard.classList.add("EnrollCard");
