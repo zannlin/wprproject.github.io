@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("There was a problem with the fetch operation:", error); //catches error and displays it in the console
     });
 
+
   function displayCourses(courses) {
     let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
     courses.forEach((course) => {
@@ -96,11 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let venhtml ="";
         venues.forEach(venue =>{
           venhtml = `${venhtml} <tr><td>${venue}</td></tr>`
-        })
-
-
-
-
+        });
+        
         courseInfoblock.innerHTML = ` 
                 <h3>About the course</h3>
                 <p class="desctiption">${course.full_description}</p>
@@ -115,10 +113,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Venues</h3>
                 <table>${venhtml}</table>
                 </span>
+                
             `;
 
         //Heading image and text
-        document.querySelector("#index-title-section h2").textContent = `${course.title}`;
+        const mainSeg = document.querySelector("#index-title-section");
+        let enrollCard = document.createElement("div");
+        enrollCard.classList.add("EnrollCard");
+        enrollCard.innerHTML=`
+        <h3 class="ECtitle">${course.title}</h3>
+        <span class="priceDuration">
+          <p class="top">Price</p>
+          <p class="top">Duration</p>
+          <p class="bottom">R${course.course_cost_peryear} /year</p>
+          <p class="bottom">${course.course_duration}</p>
+        </span>
+        <a href="Enroll.html"><button>Enroll</button></a>
+        `;
+        mainSeg.appendChild(enrollCard);
+
+
+
         document.getElementById("index-title-section").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('Images/${course.title}.webp') no-repeat scroll center`;
         document.getElementById("index-title-section").style.backgroundSize =
@@ -135,25 +150,39 @@ document.addEventListener("DOMContentLoaded", function () {
   url('Images/home_header.jpg') no-repeat scroll center`;
     document.getElementById("index-title-section").style.backgroundSize =
       "cover";
-    document.querySelector("#index-title-section h2").textContent = "Courses";
   }
 
   //Removes cards Adds button and section
   function removeAndAdd() {
-    //removes cards
+    //removes cards and heading
     let cards = document.querySelectorAll(".card"); //Selects all cards and adds the invisible class to it
     cards.forEach((element) => {
       element.classList.add("invisible");
     });
+    document.querySelector("#index-title-section h2").classList.add("invisible");
 
     //Adds the back button
-    const newButt = document.createElement("button");
-    newButt.classList.add("back");
-    document.querySelector("#courses").parentNode.insertBefore(newButt, document.querySelector("#courses"));
-    newButt.textContent = "Back";
+    document.querySelector("#back").classList.remove("invisible");
     document.querySelector("#courseDetail").classList.remove("invisible");
   }
+
+  document.getElementById("back").addEventListener("click", function(){GoBack();});
+
+  function GoBack(){
+    console.log("go back");
+    //adds cards and heading
+    let cards = document.querySelectorAll(".card"); //Selects all cards and removes the invisible class to it
+    cards.forEach((element) => {
+      element.classList.remove("invisible");
+    });
+    
+    document.querySelector("#index-title-section h2").classList.remove("invisible");
+    document.querySelector("#back").classList.add("invisible");
+    document.getElementById("courseDetail").innerHTML="";
+  }
+
 });
+  
 
 //dropdown
 function toggleDropdown(dropdownId) {
