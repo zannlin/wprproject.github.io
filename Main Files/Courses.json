@@ -15,9 +15,9 @@
         "course_cost_peryear": 53000,
         "course_code": "HCIT100",
         "lecturers": [
-          "Dr. Alice Johnson",
-          "Prof. Mark Smith",
-          "Dr. Linda Thompson"
+          "Spongebob",
+          "Joker",
+          "FlintLockwood"
         ],
         "venues": [
           "Lecture Hall A, Main Building",
@@ -42,9 +42,9 @@
         "course_cost_peryear": 55000, 
         "course_code": "DGD200",
         "lecturers": [
-          "Prof. Emily Davis",
-          "Dr. Robert Lee",
-          "Mr. John Williams"
+          "Spongebob",
+          "Joker",
+          "FlintLockwood"
         ],
         "venues": [
           "Game Design Studio, Creative Arts Building",
@@ -72,9 +72,9 @@
         "course_cost_peryear": 78000,
         "course_code": "BSC301",
         "lecturers": [
-          "Dr. Michael Anderson",
-          "Prof. Susan Clark",
-          "Dr. Karen Martinez"
+          "Spongebob",
+          "Joker",
+          "FlintLockwood"
         ],
         "venues": [
           "Lecture Hall B, Main Building",
@@ -100,9 +100,9 @@
         "course_cost_peryear":  69000,
         "course_code": "MSC500",
         "lecturers": [
-          "Dr. Jane Williams",
-          "Prof. David Brown",
-          "Dr. Emily Carter"
+          "Spongebob",
+          "Joker",
+          "FlintLockwood"
         ],
         "venues": [
           "Lecture Hall C, Graduate Building",

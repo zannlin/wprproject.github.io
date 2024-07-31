@@ -38,48 +38,20 @@
       </nav>
     </header>
 
-    <h1 id="courhead">Courses</h1>
-
-    <section id="index-title-section" class="invisible">
-      <h2>Start your Journey Today...</h2>
+    <section id="index-title-section" >
+      <h2>Courses</h2>
     </section>
 
-    <main id="courses"></main>
+    <main id="courses">
+      <section id="courseDetail" class="invisible">
+        
+      
+    </section>
+    </main>
 
-    <main id="courseDetail">
-      <div class="CourseDrop">
-        <button onclick="toggleDropdown('HCIT')">
-          Higher Certificate in IT
-        </button>
+    <main>
         <div id="HCIT" class="CourseDrop-content">
           <div class="Courseblock">
-              <div class="CourseInfo">
-                  <table>
-                      <tbody>
-                          <tr>
-                              <td>Duration</td>
-                              <td>3 Years</td>
-                          </tr>
-                          <tr>
-                              <td>NQF</td>
-                              <td>7</td>
-                          </tr>
-                          <tr>
-                              <td>Credits</td>
-                              <td>350</td>
-                          </tr>
-                          <tr>
-                              <td>Corse Code</td>
-                              <td>HCIT100</td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-              <div class="paragraphs">
-                  <p>The Higher Certificate in IT provides a comprehensive introduction to the field of information technology. This one-year program is designed to equip students with essential IT skills, making them proficient in software development, networking, and database management. Ideal for those seeking entry-level positions or wishing to further their studies, this course lays a solid foundation in both theoretical knowledge and practical application.</p>
-                  <div class="LecNdVen">
-                  <h4>Lecturers:</h4>
-                  <div class="SubOptInfo">
             <div class="CourseInfo">
               <table>
                 <tbody>
@@ -130,9 +102,109 @@
                 </ul>
               </div>
               <a href="Images/WPR 281 Study Guide [2024] v1.4.pdf" download>Download study guide here</a>
-              </div>
             </div>
           </div>
+          <div class="CourseDrop">
+            <button onclick="toggleDropdown('HCITY1')">
+              First year subjects
+            </button>
+            <div id="HCITY1" class="CourseDrop-content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th></th>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Introduction to Programming</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Database Systems</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Network Security</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="CourseDrop">
+            <button onclick="toggleDropdown('HCITY2')">
+              Second year subjects
+            </button>
+            <div id="HCITY2" class="CourseDrop-content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th></th>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Web Development Basics</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>IT Support and Maintenance</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Information Systems</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="CourseDrop">
+            <button onclick="toggleDropdown('HCITY3')">
+              Third year subjects
+            </button>
+            <div id="HCITY3" class="CourseDrop-content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th></th>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Software Engineering</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Artificial Intelligence</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                  <tr>
+                    <td>Professional Practice in IT</td>
+                    <td></td>
+                    <!--Reggie asked for this column-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      
     </main>
 
     <script src="Main Files/mainfuncs.js"></script>
