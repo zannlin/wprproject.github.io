@@ -96,11 +96,11 @@ h2 {
 
 /* #endregion */
 
-#courseDetail {
+.courseDetail {
   color: white;
 }
 
-#courseDetail h3 {
+.courseDetail h3 {
   font-size: 26px;
   color: var(--primary-color);
 }

@@ -71,7 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleCourseCicked(clicked, courses) {
     removeAndAdd();
-    let courseInfoblock = document.getElementById("courseDetail");
+    let parentBlock = document.getElementById("Detail");  //The container in which we will add code into
+    const courseInfoblock = document.createElement("div");  
+    courseInfoblock.classList.add("courseDetail");
     courses.forEach((course) => {
       if (course.course_code == clicked) {
         
@@ -113,8 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Venues</h3>
                 <table>${venhtml}</table>
                 </span>
-                
+
             `;
+            parentBlock.appendChild(courseInfoblock);
 
         //Heading image and text
         const mainSeg = document.querySelector("#index-title-section");
@@ -163,22 +166,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Adds the back button
     document.querySelector("#back").classList.remove("invisible");
-    document.querySelector("#courseDetail").classList.remove("invisible");
+    document.querySelector("#Detail").classList.remove("invisible");
   }
 
   document.getElementById("back").addEventListener("click", function(){GoBack();});
 
+  //Turn every thing back to normal
   function GoBack(){
-    console.log("go back");
+    //resets the heading background
+    resetheading();
+
     //adds cards and heading
     let cards = document.querySelectorAll(".card"); //Selects all cards and removes the invisible class to it
     cards.forEach((element) => {
       element.classList.remove("invisible");
     });
-    
+
     document.querySelector("#index-title-section h2").classList.remove("invisible");
+    
+    //Removes back button, course detail text  
     document.querySelector("#back").classList.add("invisible");
-    document.getElementById("courseDetail").innerHTML="";
+    document.querySelector(".courseDetail").remove();
+    document.getElementById("Detail").classList.add("invisible");
+    document.querySelector(".EnrollCard").remove();
   }
 
 });
