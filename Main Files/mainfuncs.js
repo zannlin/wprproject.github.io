@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
   function handleResize() {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
       // Adjust this breakpoint as needed
       nav.style.display = "flex"; // Show nav when viewport is larger than breakpoint
       hamburgerBTN.classList.remove("active"); // Ensure button is not active

@@ -27,7 +27,8 @@ h1 {
 }
 
 .card {
-  width: 20.5rem;
+  min-width: 20.5rem;
+  max-width: 20.5rem;
   height: 32rem;
   background-color: black;
   color: white;

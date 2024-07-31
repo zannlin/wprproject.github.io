@@ -169,7 +169,7 @@ form button {
 }
 /* #endregion */
 
-@media (max-width: 480px) {
+@media (max-width: 299px) {
   :root {
     --btn-height: 3rem;
   }
@@ -230,7 +230,7 @@ form button {
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 768px) {
   :root {
     --btn-height: 3rem;
   }
@@ -242,8 +242,8 @@ form button {
     background: var(--btn-color);
     border-radius: var(--search_radius);
     border: 2px solid var(--primary-color);
-    margin-left: 1%;
-    margin-top: 2.5% !important; 
+    margin: auto;
+    margin-top: 5%; 
   }
 
   nav input,
@@ -284,17 +284,14 @@ form button {
   }
 
   header nav ul li {
-    font-size: xx-large;
+    font-size:36pt;
     padding: 1% 0;
     width: 100%;
+    margin-top: 12%;
   }
 
   header ul li:last-of-type {
     height: 100vh;
-  }
-
-  header nav form {
-    margin: auto;
   }
 
   .hamburger-btn {
