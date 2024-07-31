@@ -1,167 +1,397 @@
 :root {
-    --search_radius: 5rem;
-    --search_trans_dur: 0.3s;
-    --btn-color: #ff3434;
-    --btn-width: 3rem;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #1f1f1f;
-  }
-  
+  --search_radius: 5rem;
+  --search_trans_dur: 0.3s;
+  --btn-color: #ff3434;
+  --btn-width: 3rem;
+  --transparent-color: rgba(0, 0, 0, 0);
+  --background-color: #1f1f1f;
+  --primary-color: #ff3434;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button{
+  padding: 10px 20px;
+  border: 0px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  background-color: var(--primary-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* #region Header */
+header {
+  display: flex;
+  background-color: var(--background-color);
+  height: 10vh;
+  padding: 0 5vw;
+  border-bottom: 2px solid var(--primary-color);
+  z-index: 9999;
+  position: sticky;
+  top: 0;
+}
+
+.navbar{
+  width: 50%;
+  margin: auto;
+}
+
+header h1 {
+  color: var(--primary-color);
+  margin: auto;
+  text-wrap: nowrap;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  font-size: medium;
+  height: 100%;
+  width: 50%;
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+header nav ul li {
+  width: max(10%, 75px);
+}
+
+header nav ul li a {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.hamburger-btn {
+  display: none;
+}
+
+/* Searchbar */
+nav form {
+  position: relative;
+  width: 15rem;
+  background: var(--btn-color);
+  border-radius: var(--search_radius);
+  border: 2px solid var(--primary-color);
+  margin-left: 1%;
+}
+
+nav input,
+nav button {
+  height: 100%;
+  border: 0;
+  font-size: medium;
+}
+
+nav input[type="search"] {
+  outline: 0;
+  width: 100%;
+  padding: 0 0.8rem;
+  border-radius: var(--search_radius);
+  appearance: none;
+  background-color: black;
+  color: white;
+  position: relative;
+
+  transition: width var(--search_trans_dur),
+    border-radius var(--search_trans_dur);
+}
+
+nav button {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  height: 100%;
+  font-weight: bold;
+  background: var(--btn-color);
+  border-radius: 0 var(--search_radius) var(--search_radius) 0;
+  color: white;
+
+  z-index: 2; /* Ensures button is above input */
+
+  transition: opacity var(--search_trans_dur),
+    visibility var(--search_trans_dur), background-color var(--search_trans_dur);
+}
+
+nav ::placeholder {
+  color: rgb(136, 136, 136);
+  opacity: 1; /* Firefox */
+}
+
+nav input:not(:placeholder-shown) {
+  border-radius: var(--search_radius) 0 0 var(--search_radius);
+  width: calc(100% - var(--btn-width));
+}
+
+nav input:not(:placeholder-shown) + button {
+  opacity: 1;
+  visibility: visible; /* Show the button when input has text */
+}
+
+nav button:hover {
+  background-color: var(--btn-hover-color); /* Change color on hover */
+}
+
+nav button:active {
+  opacity: 75%; /* Border color when clicked */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Creates an inset shadow effect */
+}
+
+form button {
+  cursor: pointer;
+  padding-top: 1px;
+}
+/* #endregion */
+
+@media (max-width: 480px) {
   header {
-    background-color: black;
-    height: 10vh;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    border-bottom: 2px solid #ff3434;
+    display: block;
+    height: auto;
+    padding: 0;
   }
-  
-  header nav {
-    display: flex;
-    align-items: center;
-    font-size: medium;
-    height: 100%;
+
+  .navbar {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-evenly;
   }
-  
-  header nav h1 {
-    color: #ff3434;
-  
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 100%;
+
+  header h1 {
+    font-size: x-large;
     width: fit-content;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
+    margin: 0; 
   }
-  
+
+  header nav {
+    display: none;
+    width: 100%;
+  }
+
   header nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+    flex-direction: column;
+    background: linear-gradient(
+      to bottom, /* Direction of the gradient */
+      var(--background-color), /* Starting color */
+      rgba(54, 48, 48, 0.5) /* End color*/
+    );
   }
-  
+
   header nav ul li {
-    display: flex;
-    align-items: center;
-    vertical-align: middle;
-    text-align: center;
-    margin: 0 1rem;
-    overflow: hidden;
-    width: max(10%, 75px);
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header nav ul li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease-in-out;
+    padding: 1% 0;
     width: 100%;
-    height: 100%;
-    color: white;
-    text-decoration: none;
+    border-top: 2px solid var(--primary-color);
+  }  
+
+  header nav form {
+    display: none;
   }
 
-  #redword{
-    color:#ff3434;
-  }
-  
-  header nav ul li a:hover {
-    color: #ff3434;
-  }
-  
-  nav form {
-    position: relative;
-    width: 15rem;
-    background: var(--btn-color);
-    border-radius: var(--search_radius);
-    border: 2px solid #ff3434;
-    margin-left: 1%;
-  }
-  
-  nav input,
-  nav button {
-    height: 100%;
+  .hamburger-btn {
+    display: block;
+    background-color: var(--transparent-color);
+    font-size: x-large;
     border: 0;
-    font-size: medium;
-  }
-
-  nav input[type="search"] {
-    outline: 0;
-    width: 100%;
-    padding: 0 0.8rem;
-    border-radius: var(--search_radius);
-    appearance: none;
-    background-color: black;
-    color: white;
-    position: relative;
-    
-  
-    transition: width var(--search_trans_dur),
-      border-radius var(--search_trans_dur);
-  }
-  
-  nav button {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: var(--btn-width);
-    height: 100%;
-    font-weight: bold;
-    background: var(--btn-color);
-    border-radius: 0 var(--search_radius) var(--search_radius) 0;
-    color: white;
-  
-    z-index: 2; /* Ensures button is above input */
-  
-    transition: opacity var(--search_trans_dur),
-      visibility var(--search_trans_dur), background-color var(--search_trans_dur);
-  }
-  
-  nav ::placeholder {
-    color: rgb(136, 136, 136);
-    opacity: 1; /* Firefox */
-  }
-  
-  nav input:not(:placeholder-shown) {
-    border-radius: var(--search_radius) 0 0 var(--search_radius);
-    width: calc(100% - var(--btn-width));
-  }
-  
-  nav input:not(:placeholder-shown) + button {
-    opacity: 1;
-    visibility: visible; /* Show the button when input has text */
-  }
-  
-  nav button:hover {
-    background-color: var(--btn-hover-color); /* Change color on hover */
-  }
-  
-  nav button:active {
-    opacity: 75%; /* Border color when clicked */
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Creates an inset shadow effect */
-  }
-
-  form button{
     cursor: pointer;
   }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  header {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+
+  .navbar {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-evenly;
+  }
+
+  header h1 {
+    font-size: x-large;
+    width: fit-content;
+    margin: 0; 
+  }
+
+  header nav {
+    display: none;
+    width: 100%;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    background: linear-gradient(
+      to bottom, /* Direction of the gradient */
+      var(--background-color), /* Starting color */
+      rgba(54, 48, 48, 0.5) /* End color*/
+    );
+  }
+
+  header nav ul li {
+    padding: 1% 0;
+    width: 100%;
+    border-top: 2px solid var(--primary-color);
+  }  
+
+  header nav form {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+    background-color: var(--transparent-color);
+    font-size: x-large;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+}
+
+#redword {
+  color: var(--primary-color);
+}
+
+
+/* #region Footer */
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: var(--background-color);
+  color: white;
+}
+
+.footer_item {
+  padding-top: 10%;
+}
+
+.footer_item1 {
+  grid-column: 1 / span 3;
+  color: red;
+  border-bottom: 3px solid white;
+  padding-top: 3.5%;
+  padding-bottom: 3.5%;
+}
+
+.footer_item2 {
+  border-right: 2px solid white;
+}
+
+.footer_item3 {
+  padding-left: 7.5%;
+  border-right: 2px solid white;
+}
+/* #endregion */
+
+/* #region CourseBody */
+
+.Courseblock {
+  display: flex;
+  align-items: flex-start;
+  gap: 1%; 
+}
+
+.CourseInfo {
+  overflow: auto;
+  width: 20%;
+}
+
+.CourseInfo table {
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: left;
+}
+
+.CourseInfo th {
+
+  color: #000000;
+  padding: 5px;
+}
+
+.CourseInfo td {
+  border: 1px solid #dededf;
+
+  color: #000000;
+  padding: 5px;
+}
+
+
+
+.CourseDrop {
+  margin-top: 20px;
+}
+
+.CourseDrop-content {
+  display: none;
+  border: 1px solid #dededf;
+  padding: 10px;
+
+}
+
+.CourseDrop-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.CourseDrop-content th,
+.CourseDrop-content td {
+  border: 1px solid #dededf;
+  padding: 5px;
+  text-align: left;
+}
+
+.show {
+  display: block;
+}
+
+.LecNdVen {
+  display: flex;
+}
+
+.SubOptInfo{
+  display:inline-block;
+  margin-right: 10%;
+}
+/* #endregion */

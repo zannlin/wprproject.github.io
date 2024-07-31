@@ -1,66 +1,151 @@
-
-body{
-    background-color: black;
-}
-h1{
-    color:white;
+body {
+  background-color: black;
 }
 
-#courhead{
-    text-align: center;
-    font-size: 400%;
+h1 {
+  color: white;
 }
 
-#courses{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#courhead {
+  text-align: center;
+  font-size: 500%;
 }
 
-.card h3{
-    color: #FF3434;
-    margin-bottom: 1rem;
+#courses {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 58%;
+  margin: auto;
 }
 
-.card{
-    width: 20.5rem;
-    height: 32rem;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding:0.5em;
-    border: 1px solid white;
-    margin: 1rem;
-    display:grid;
-    grid-template-rows: 37% 5% 25%;
+.card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-.card p{
-    padding: 1rem;
-    margin-bottom: -1rem;
+.card {
+  width: 20.5rem;
+  height: 32rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0.5em;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  margin: 1rem;
+  display: grid;
+  grid-template-rows: 37% 5% 25%;
 }
 
-.card img{
-    width: 98%;
-    height: 100%;
+.card p {
+  padding: 1rem;
+  margin-bottom: -1rem;
 }
 
-.priceDuration{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1.5rem);
-    column-gap: 2rem;
-    margin-bottom: 4rem;
+.card img {
+  width: 98%;
+  height: 100%;
 }
 
-.price{
-    text-align: right;
+.priceDuration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1.5rem);
+  column-gap: 2rem;
+  margin-bottom: 4rem;
+  justify-content: center;
 }
 
-.duration{
-    text-align: left;
+.price {
+  text-align: right;
 }
 
-.invisible{
-    display: none;
+.duration {
+  text-align: left;
+}
+
+.invisible {
+  display: none;
+}
+
+#back {
+  margin-left: 20%;
+  margin-top: 2%;
+}
+
+/* #region popup heading */
+
+#index-title-section {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  text-align: center; /* Centers vertically */
+  height: 85vh;
+  margin-top: 0px;
+}
+
+h2 {
+  font-size: 4.5rem;
+  color: white;
+  text-align: center;
+  margin: 0px;
+}
+
+/* #endregion */
+
+.courseDetail {
+  color: white;
+}
+
+.courseDetail h3 {
+  font-size: 26px;
+  color: var(--primary-color);
+}
+
+.profilePhoto {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.Modue {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+
+.Modue h3 {
+  grid-row: 1;
+}
+
+.EnrollCard {
+  width: 20rem;
+  height: 21rem;
+  background-color: #1f1f1f;
+  color: white;
+  padding: 2rem;
+  /*position: absolute;
+  top: 50%;
+  transform: translateY(-50%);*/
+}
+
+.EnrollCard h3{
+  font-size: 29px;
+  margin-top: 1rem;
+}
+
+.EnrollCard button{
+  width: 15rem;
+}
+
+.top{
+  font-size: 13px;
+}
+
+.bottom{
+  font-weight:400;
+  font-size: 23px;
 }

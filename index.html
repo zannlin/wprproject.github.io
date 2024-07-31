@@ -1,40 +1,172 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="Main Files/mainstyles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Main Files/mainstyles.css" />
+    <link rel="stylesheet" href="index.css" />
     <title>WPR281 Project</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-          <h1>StartSmart University</h1>
-  
-          <ul>
-            <li><a href="index.html" id="redword">Home</a></li>
-            <li><a href="Apply.html">Apply</a></li>
-            <li><a href="Courses.html" >Courses</a></li>
-          </ul>
-         
-          <form role="search">
-            <input
-              id="search"
-              type="search"
-              placeholder="Search..."
-              autofocus
-              required/>
-            <button type="submit"><i class="fas fa-search"></i></button>
-          </form>
-        
-        </nav>
-      </header>
-  
-      <footer></footer>
+      <div class="navbar">
+        <h1>StartSmart University</h1>
+        <button class="hamburger-btn">&#9776;</button>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" id="redword">Home</a></li>
+          <li><a href="Enroll.html">Enroll</a></li>
+          <li><a href="Courses.html">Courses</a></li>
+        </ul>
+
+        <form role="search">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search..."
+            autofocus
+            required
+          />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </nav>
+    </header>
+
+    <section id="index-title-section">
+      <h2>Start your Journey Today...</h2>
+      <p id="title-p">The <i>Smart</i> Way</p>
+    </section>
+
+    <section id="index-howitworks-section">
+      <h2 class="grid-item grid-item1">Learning Re-imagined</h2>
+      <img class="grid-item grid-item2" src="./Images/home_section_1.png" />
+      <div class="grid-item grid-item3">
+        <h3>Education beyond books</h3>
+        <p>
+          Embark on a journey of flexible learning with our institution. We
+          cater to individuals seeking high-value education with the convenience
+          of learning how you need to. At StartSmart University, progressing at
+          your own pace is key to success.
+        </p>
+      </div>
+    </section>
+
+    <section id="index-learn-section">
+      <img
+        class="section-divider"
+        src="Images/section_divider.png"
+        alt="simple section divider"
+      />
+    </section>
+
+    <section id="index-services-section">
+      <div class="grid-item grid-item1">
+        <h2>Courses</h2>
+        <p>
+          StartSmart University offers three cutting edge courses, which won't
+          just empty your wallet, but empower your career too!
+        </p>
+      </div>
+
+      <div class="grid-item grid-item2">
+        <img src="./Images/hand.png" />
+        <h4>Higher Certificate in I.T</h4>
+        <p>
+          Get started with the basics of everything you need to know to thrive
+          as an IT Specialist.
+        </p>
+      </div>
+      <div class="grid-item grid-item3">
+        <img src="./Images/controller.png" />
+        <h4>Diploma in game design</h4>
+        <p>
+          Learn the ins and outs of turning an idea into a full-fledged game.
+        </p>
+      </div>
+      <div class="grid-item grid-item4">
+        <img src="./Images/code.png" />
+        <h4>BSC computer science</h4>
+        <p>
+          Dive deep into the complexities of computers and Software Engineering.
+        </p>
+      </div>
+    </section>
+
+    <section id="index-learn-section">
+      <img
+        class="section-divider"
+        src="Images/section_divider.png"
+        alt="simple section divider"
+      />
+    </section>
+
+    <section id="index-testimonial-section">
+      <div class="grid-item grid-item1">
+        <h2>Student Stories</h2>
+        <p id="tinyRedText">
+          Don't listen to what we say. Listen to what THEY say...
+        </p>
+
+        <p>
+          Discover what our students have to say about their experience. Their
+          feedback speaks volumes about the quality of education we provide.
+          Read on to hear directly from our satisfied learners:
+        </p>
+      </div>
+
+      <div class="grid-item grid-item2">Payton Hillman</div>
+
+      <div class="grid-item grid-item3">Avery Smith</div>
+      <div class="grid-item grid-item4">Jessie Brown</div>
+      <div class="grid-item grid-item5">
+        <p>
+          I never thought learning could be so engaging and enriching.
+          StartSmart University has truly changed my perspective on education.
+        </p>
+      </div>
+      <div class="grid-item grid-item6">
+        <p>
+          The support and resources available at StartSmart University have made
+          my learning journey smooth and rewarding. I highly recommend it to
+          anyone seeking a flexible yet comprehensive education.
+        </p>
+      </div>
+      <div class="grid-item grid-item7">
+        <p>
+          StartSmart University has exceeded my expectations in every way. The
+          courses are well-structured, and the instructors are highly
+          knowledgeable. I'm proud to be a part of this institution.
+        </p>
+      </div>
+    </section>
+
+    <section id="index-learn-section">
+      <img
+        class="section-divider"
+        src="Images/section_divider.png"
+        alt="simple section divider"
+      />
+    </section>
+
+    <footer>
+      <div class="footer_item1"><h1>StartSmart University</h1></div>
+      <div class="footer_item footer_item2">
+        123-456-7890<br />info@mysite.com
+      </div>
+      <div class="footer_item footer_item3">
+        500 Terry Francine Street,<br />6th Floor, San Francisco,<br />
+        CA 94158
+      </div>
+      <div class="footer_item footer_item4"></div>
+    </footer>
 
     <script src="Main Files/mainfuncs.js"></script>
     <script src="Index.js"></script>
-</body>
+  </body>
 </html>
