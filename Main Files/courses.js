@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <p class="bottom">R${course.course_cost_peryear} /year</p>
           <p class="bottom">${course.course_duration}</p>
         </span>
-        <a href="Enroll.html"><button>Enroll</button></a>
+        <a href="Enroll.html" onclick="enroll()"><button>Enroll</button></a>
         `;
         mainSeg.appendChild(enrollCard);
 
@@ -202,4 +202,8 @@ function toggleDropdown(dropdownId) {
   } else {
     DropDown.classList.add("show");
   }
+}
+
+function enroll(course) {
+  window.location.href = `Enroll.html?course=${course}`;
 }

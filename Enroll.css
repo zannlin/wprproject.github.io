@@ -41,9 +41,6 @@
     text-align: center;
 }
 
-.form-group-button button{
-    padding-top: 6px;
-}
 
 #submit:hover {
     background-color: black;

@@ -1,14 +1,22 @@
     // Pre-select the course based on URL parameter
+    function lockDropdown() {
+        let courseDropdown = document.getElementById('course');
+        if (courseDropdown.value !== "") {
+            courseDropdown.disabled = true;
+        }
+    }
+
     window.onload = function() {
         let urlParams = new URLSearchParams(window.location.search);
         let course = urlParams.get('course');
         if (course) {
-            document.getElementById('course').value = course;
+            let courseDropdown = document.getElementById('course');
+            courseDropdown.value = course;
+            courseDropdown.disabled = true;
         }
-
-
-        let courseStartDate = new Date('2024-09-01T09:00:00'); // Set course start date and time here
-        let countdownElement = document.getElementById('countdown');
+    }
+    let courseStartDate = new Date('2024-09-01T09:00:00'); // Set course start date and time here
+    let countdownElement = document.getElementById('countdown');
 
         function updateCountdown() {
             let now = new Date();
@@ -29,5 +37,4 @@
         }
 
         let timerInterval = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call to set the countdown right away
-    };
+        updateCountdown(); // Initial call to set the countdown right away;
