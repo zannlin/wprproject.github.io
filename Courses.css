@@ -41,6 +41,27 @@ h1 {
   grid-template-rows: 37% 5% 25%;
 }
 
+.card button{
+  padding: 3%;
+}
+
+@media (max-width: 405px) {
+  .card {
+    min-width: 16rem;
+    max-width: 18rem;
+    font-size: larger;
+  }
+
+  .card img {
+    display: none;
+  }
+
+  .card button {
+    margin-top: 2rem;
+    padding: 3%;
+  }
+}
+
 .card p {
   padding: 1rem;
   margin-bottom: -1rem;
@@ -130,20 +151,35 @@ h2 {
   padding: 2rem;
 }
 
-.EnrollCard h3{
+.EnrollCard h3 {
   font-size: 29px;
   margin-top: 1rem;
 }
 
-.EnrollCard button{
+.EnrollCard button {
   width: 15rem;
+  padding: 3%;
 }
 
-.top{
+.top {
   font-size: 13px;
 }
 
-.bottom{
-  font-weight:400;
+.bottom {
+  font-weight: 400;
   font-size: 23px;
+}
+
+.desctiption{
+  padding-right: 20rem;
+  text-align: justify;
+}
+
+.lecPic img{
+  margin: 1rem;
+}
+
+.lecName{
+  text-align: center;
+  font-weight: 700;
 }
