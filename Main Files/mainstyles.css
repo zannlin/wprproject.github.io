@@ -334,12 +334,16 @@ footer {
   padding-top: 10%;
 }
 
-.footer_item1 {
+.footer_item1{
   grid-column: 1 / span 3;
-  color: red;
+  color:#ff3434;
   border-bottom: 3px solid white;
   padding-top: 3.5%;
   padding-bottom: 3.5%;
+}
+
+.footer_item1 h1{
+  color:#ff3434
 }
 
 .footer_item2 {
