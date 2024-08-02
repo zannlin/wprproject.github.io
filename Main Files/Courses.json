@@ -15,9 +15,9 @@
         "course_cost_peryear": 53000,
         "course_code": "HCIT100",
         "lecturers": [
-          "Spongebob",
-          "Joker",
-          "FlintLockwood"
+          "ElonMusk",
+          "FlintLockwood",
+          "CreepyGuyfromfacebook"
         ],
         "venues": [
           "Lecture Hall A, Main Building",
@@ -43,7 +43,7 @@
         "course_code": "DGD200",
         "lecturers": [
           "Spongebob",
-          "Joker",
+          "Reghard",
           "FlintLockwood"
         ],
         "venues": [
@@ -72,8 +72,8 @@
         "course_cost_peryear": 78000,
         "course_code": "BSC301",
         "lecturers": [
-          "Spongebob",
-          "Joker",
+          "SnoopDogg",
+          "Rassie",
           "FlintLockwood"
         ],
         "venues": [
@@ -100,7 +100,7 @@
         "course_cost_peryear":  69000,
         "course_code": "MSC500",
         "lecturers": [
-          "Spongebob",
+          "BrokeOldGuy",
           "Joker",
           "FlintLockwood"
         ],

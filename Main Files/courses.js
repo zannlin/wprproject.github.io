@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p class="desctiption">${course.full_description}</p>
                 <h3>Lecturers</h3>
                 <table>
-                <tr>${lecRow1}</tr>
-                <tr>${lecRow2}</tr>
+                <tr class="lecName">${lecRow1}</tr>
+                <tr class="lecPic">${lecRow2}</tr>
                 </table>
                 <span class="Modue">
                 <h3>Modules</h3>
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Venues</h3>
                 <table>${venhtml}</table>
                 </span>
-                <table><iframe width="1864" height="762" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"></table>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             `;
             parentBlock.appendChild(courseInfoblock);
 
