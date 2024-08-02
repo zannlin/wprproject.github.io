@@ -230,6 +230,8 @@ form button {
   }
 }
 
+
+
 @media (min-width: 300px) and (max-width: 768px) {
   :root {
     --btn-height: 3rem;
@@ -244,6 +246,7 @@ form button {
     border: 2px solid var(--primary-color);
     margin: auto;
     margin-top: 5%; 
+    z-index: 99;
   }
 
   nav input,
@@ -417,3 +420,10 @@ footer {
   margin-right: 10%;
 }
 /* #endregion */
+
+@media (max-height: 600px){
+  header nav ul li {
+    font-size:18pt;
+    margin-top: 1%;
+  }
+}
