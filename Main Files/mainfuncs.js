@@ -5,19 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Form submitted");
   }
 
-
   const hamburgerBTN = document.querySelector(".hamburger-btn");
   const nav = document.querySelector("header nav");
   const form = document.querySelector("header nav form");
   const ul = document.querySelector("header nav ul");
   const header = document.querySelector("header");
-  
+
   hamburgerBTN.addEventListener("click", () => {
     hamburgerBTN.classList.toggle("active");
-  
+
     // Toggle display of the navigation
     nav.style.display = nav.style.display === "block" ? "none" : "block";
-  
+
     // Move the search form before the ul when menu is opened
     if (hamburgerBTN.classList.contains("active")) {
       header.querySelector("nav").insertBefore(form, ul);
@@ -26,24 +25,28 @@ document.addEventListener("DOMContentLoaded", function () {
       header.querySelector("nav").appendChild(form);
     }
   });
-  
+
   function handleResize() {
     if (window.innerWidth >= 768) {
-      // Adjust this breakpoint as needed
       nav.style.display = "flex"; // Show nav when viewport is larger than breakpoint
       hamburgerBTN.classList.remove("active"); // Ensure button is not active
       // Move the search form back to its original position
       header.querySelector("nav").appendChild(form);
     } else {
       nav.style.display = "none"; // Hide nav on smaller viewports
+      // Move the search form back to its original position if nav is not active
+      if (!hamburgerBTN.classList.contains("active")) {
+        header.querySelector("nav").appendChild(form);
+      }
     }
   }
 
-// Create to fix nav becoming block and then needing to go back to flex
-window.addEventListener("resize", function () {
+  // Add the resize event listener
+  window.addEventListener("resize", handleResize);
+  // Initial call to handleResize to set the correct state on page load
   handleResize();
 });
-});
+
 
 let courses = []; //array where the json file's conent will be stored in
 

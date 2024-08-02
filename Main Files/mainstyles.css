@@ -73,7 +73,8 @@ header nav ul {
 }
 
 header nav ul li {
-  width: max(10%, 75px);
+  width: fit-content;
+  margin-right: 10px;
 }
 
 header nav ul li a {
