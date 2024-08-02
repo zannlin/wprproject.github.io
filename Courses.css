@@ -96,6 +96,7 @@ h1 {
 #back {
   margin-left: 20%;
   margin-top: 2%;
+  padding: 0.2rem 1rem; 
 }
 
 /* #region popup heading */
@@ -170,8 +171,8 @@ h2 {
   font-size: 23px;
 }
 
-.desctiption{
-  padding-right: 20rem;
+.description{
+  max-width: 50rem;
   text-align: justify;
 }
 
@@ -182,4 +183,68 @@ h2 {
 .lecName{
   text-align: center;
   font-weight: 700;
+}
+
+iframe{
+  width:  100%;
+  margin-top: 2rem;
+}
+
+@media (max-width: 898px){
+  #back {
+    margin-left: 16%;
+  }
+}
+
+
+@media (min-width:520px) and (max-width: 610px) {
+  #Detail{
+    margin-left: 50%;
+  }
+  
+  #Detail div{
+    text-align: center;
+  }
+
+  .lecPic img{
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .lecName{
+    font-size: 90%;
+  }
+
+  #back {
+    margin-left: 12%;
+  }
+  
+  #Detail{
+    width: 150%;
+    margin-right: 55%;
+  }
+}
+
+@media (max-width: 519px) {
+  .lecPic img{
+    width: 6rem;
+    height: 6rem;
+  }
+
+  #back {
+    margin-left: 8%;
+  }
+
+  .description{
+    padding: 0;
+  }
+
+  .lecName{
+    display: none;
+  }
+
+  .lecPic img{
+    margin: 0;
+    padding: 2px;
+  }
 }

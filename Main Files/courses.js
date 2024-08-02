@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         courseInfoblock.innerHTML = ` 
                 <h3>About the course</h3>
-                <p class="desctiption">${course.full_description}</p>
+                <div class="description">${course.full_description}</div>
                 <h3>Lecturers</h3>
                 <table>
                 <tr class="lecName">${lecRow1}</tr>
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Venues</h3>
                 <table>${venhtml}</table>
                 </span>
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" height="500" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             `;
             parentBlock.appendChild(courseInfoblock);
 
