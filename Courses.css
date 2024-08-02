@@ -41,6 +41,10 @@ h1 {
   grid-template-rows: 37% 5% 25%;
 }
 
+.card button{
+  padding: 3%;
+}
+
 @media (max-width: 405px) {
   .card {
     min-width: 16rem;
@@ -154,6 +158,7 @@ h2 {
 
 .EnrollCard button {
   width: 15rem;
+  padding: 3%;
 }
 
 .top {
