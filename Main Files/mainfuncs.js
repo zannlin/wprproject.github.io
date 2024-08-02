@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Form submitted");
   }
 
-
   const hamburgerBTN = document.querySelector(".hamburger-btn");
   const nav = document.querySelector("header nav");
   const form = document.querySelector("header nav form");
