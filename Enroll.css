@@ -4,7 +4,7 @@
     margin: 5vw auto;
     padding: 20px;
     background-color: black;
-    border: 1px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -18,13 +18,13 @@ h2 {
 
 p  {
     text-align: center;
-    color: var(--primary-color);
+    color: white;
     font-size: 1rem;
 }
 
 .form-group {
     margin-bottom: 15px;
-    color: var(--primary-color);
+    color: white;
 }
 
 .form-group label {
@@ -38,13 +38,30 @@ p  {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 3px solid #ff3434;
+    color: white;
     box-sizing: border-box;
+    background-color: #1f1f1f;
+    box-shadow: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border: 3px white;
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.form-group option { 
+    color: white;
+    
 }
 
 .form-group-button {
     text-align: center;
+    border: 3px white;
 }
 
 
@@ -53,22 +70,29 @@ p  {
     border: 1px solid white;
 }
 
-#summarySection {
-    margin-top: 20px;
-}
+
 #summaryTable {
     border-collapse: collapse;
-    width: 100%;
+    max-width: 600px;
+    margin: 5vw auto;
+    padding: 20px;
+    background-color: black;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 #summaryTable, #summaryTable th, #summaryTable td {
     border: 1px solid #ff3434;
-    background-color: #1f1f1f;
+    background-color: black;
     color: white;
 }
+
 #summaryTable th, #summaryTable td {
     padding: 10px;
     text-align: left;
 }
+
 #summaryTable th {
     background-color: #ff3434;
 }
@@ -83,7 +107,4 @@ p  {
 .error-message {
     color: red;
     font-size: 0.875em;
-}
-.countdown {
-    font-weight: bold;
 }

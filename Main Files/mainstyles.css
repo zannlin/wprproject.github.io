@@ -25,6 +25,13 @@ button {
   background-color: var(--primary-color);
 }
 
+.section-divider {
+  width: 100vw;
+  overflow: hidden;
+  flex: 1 1 auto; /* Allows divider to grow and shrink as needed */
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -107,7 +107,7 @@
             // Add countdown to summary
             let selectedCourseStartDate = courseStartDates[selectedCourse];
             let countdownElement = document.createElement('tr');
-            countdownElement.innerHTML = `<td>Countdown</td><td class="countdown" id="countdown"></td>`;
+            countdownElement.innerHTML = `<td style="font-size:1.5rem">Course Start</td><td class="countdown" id="countdown"></td>`;
             summaryTableBody.appendChild(countdownElement);
 
             function updateCountdown() {
