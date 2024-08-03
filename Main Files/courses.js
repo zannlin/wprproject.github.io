@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <p class="bottom">R${course.course_cost_peryear} /year</p>
           <p class="bottom">${course.course_duration}</p>
         </span>
-        <a href="Enroll.html" onclick="enroll()"><button>Enroll</button></a>
+        <a  onclick="enroll('${course.course_code}')"><button>Enroll</button></a>
         `;
         mainSeg.appendChild(enrollCard);
 
@@ -204,6 +204,11 @@ function toggleDropdown(dropdownId) {
   }
 }
 
-function enroll(course) {
-  window.location.href = `Enroll.html?course=${course}`;
+function enroll(courseName) {
+  console.log('Enroll function called with:', courseName); // Debugging log
+  // Store the selected course name in local storage
+  localStorage.setItem('selectedCourse', courseName);
+  console.log('Stored in local storage:', localStorage.getItem('selectedCourse')); // Debugging log
+  // Redirect to the enrollment form page
+  window.location.href = 'Enroll.html';
 }

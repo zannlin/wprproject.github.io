@@ -9,11 +9,17 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-container h2 {
+h2 {
     text-align: center;
     margin-bottom: 20px;
     color: var(--primary-color);
     font-size: 2rem;
+}
+
+p  {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1rem;
 }
 
 .form-group {
@@ -47,9 +53,37 @@
     border: 1px solid white;
 }
 
+#summarySection {
+    margin-top: 20px;
+}
+#summaryTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+#summaryTable, #summaryTable th, #summaryTable td {
+    border: 1px solid #ff3434;
+    background-color: #1f1f1f;
+    color: white;
+}
+#summaryTable th, #summaryTable td {
+    padding: 10px;
+    text-align: left;
+}
+#summaryTable th {
+    background-color: #ff3434;
+}
+
 #countdown{
     text-align: center;
     color: white;
     font-size: 1.5rem;
     margin-bottom: 10vh;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em;
+}
+.countdown {
+    font-weight: bold;
 }
