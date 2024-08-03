@@ -58,7 +58,6 @@ h1 {
 
   .card button {
     margin-top: 2rem;
-    padding: 3%;
   }
 }
 
@@ -97,6 +96,11 @@ h1 {
   margin-left: 20%;
   margin-top: 2%;
   padding: 0.2rem 1rem; 
+}
+
+.courseDetail button{
+  padding: 0.2rem 1rem;
+  width: 10rem;
 }
 
 /* #region popup heading */

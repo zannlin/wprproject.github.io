@@ -115,6 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Venues</h3>
                 <table>${venhtml}</table>
                 </span>
+                <table>
+                <tr><td><button id="printScreen">Print</button></td>
+                <td><a href="Images/WPR 281 Study Guide [2024] v1.4.pdf" download><button>Study Guide</button></a</td></tr>
+                </table>
                 <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" height="500" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             `;
             parentBlock.appendChild(courseInfoblock);
@@ -135,12 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         mainSeg.appendChild(enrollCard);
 
-
+        document.getElementById("printScreen").addEventListener("click",()=>{
+          window.print();
+        });
 
         document.getElementById("index-title-section").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('Images/${course.title}.webp') no-repeat scroll center`;
-        document.getElementById("index-title-section").style.backgroundSize =
-          "cover";
+        document.getElementById("index-title-section").style.backgroundSize = "cover";
       }
     });
   }
