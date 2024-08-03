@@ -36,7 +36,7 @@ body {
 header {
   display: flex;
   background-color: var(--background-color);
-  height: 10vh;
+  height: max(10vh,50px);
   padding: 0 5vw;
   border-bottom: 2px solid var(--primary-color);
   z-index: 9999;
