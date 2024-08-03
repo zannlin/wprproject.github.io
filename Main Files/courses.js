@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let lecturers = course.lecturers;
         let modules = course.modules;
         let venues = course.venues;
+        let enrolledCourse = localStorage.getItem("selectedCourse");
 
         let lecRow1 = "";
         lecturers.forEach(lecturer =>{
@@ -91,10 +92,21 @@ document.addEventListener("DOMContentLoaded", function () {
           lecRow2 = `${lecRow2} <td><img src="Images/${lecturer}.jpg" class="profilePhoto"></td>`
         });
 
+        let eOrC = "";
         let modhtml = "";
-        modules.forEach(module =>{
-          modhtml = `${modhtml} <tr><td>${module}</td></tr>`
-        });
+        if(course.course_code == enrolledCourse){
+          eOrC = "Complete";
+          
+          modules.forEach(module =>{
+            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}"><label for="${module}">${module}</label></td></tr>`
+          });
+        }
+        else{
+          eOrC = "Enroll";
+          modules.forEach(module =>{
+            modhtml = `${modhtml} <tr><td>${module}</td></tr>`
+          });
+        }
 
         let venhtml ="";
         venues.forEach(venue =>{
@@ -119,9 +131,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 <tr><td><button id="printScreen">Print</button></td>
                 <td><a href="Images/WPR 281 Study Guide [2024] v1.4.pdf" download><button>Study Guide</button></a</td></tr>
                 </table>
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" height="500" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" height="500" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0"></iframe>
             `;
             parentBlock.appendChild(courseInfoblock);
+
+        
 
         //Heading card,image, and text
         const mainSeg = document.querySelector("#index-title-section");
@@ -135,12 +149,19 @@ document.addEventListener("DOMContentLoaded", function () {
           <p class="bottom">R${course.course_cost_peryear} /year</p>
           <p class="bottom">${course.course_duration}</p>
         </span>
-        <a  onclick="enroll('${course.course_code}')"><button>Enroll</button></a>
+        <a  onclick="enroll('${course.course_code}')"><button>${eOrC}</button></a>
         `;
         mainSeg.appendChild(enrollCard);
 
         document.getElementById("printScreen").addEventListener("click",()=>{
           window.print();
+        });
+
+        let checkBoxes = document.querySelectorAll("input[type=checkbox]");
+        checkBoxes.forEach(box =>{
+          box.addEventListener("change", ()=>{
+            document.querySelector(`label[for="${box.name}"]`).classList.add("completedMod");
+          });
         });
 
         document.getElementById("index-title-section").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
