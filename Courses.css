@@ -92,6 +92,10 @@ h1 {
   display: none;
 }
 
+.completedMod{
+  text-decoration: line-through;
+}
+
 #back {
   margin-left: 20%;
   margin-top: 2%;

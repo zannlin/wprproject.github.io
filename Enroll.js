@@ -102,7 +102,12 @@
                 let cell2 = row.insertCell(1);
                 cell1.textContent = field.label;
                 cell2.textContent = field.value;
+                if(field.label == "Course"){
+                    localStorage.setItem("Course", field.value);
+                }
             });
+
+            
 
             // Add countdown to summary
             let selectedCourseStartDate = courseStartDates[selectedCourse];
