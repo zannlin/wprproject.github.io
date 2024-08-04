@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("There was a problem with the fetch operation:", error); //catches error and displays it in the console
     });
 
-
+  
   function displayCourses(courses) {
     let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
     courses.forEach((course) => {
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let lecturers = course.lecturers;
         let modules = course.modules;
         let venues = course.venues;
-        let enrolledCourse = localStorage.getItem("selectedCourse");
+        let enrolledCourse = localStorage.getItem("Applied");
 
         let lecRow1 = "";
         lecturers.forEach(lecturer =>{
