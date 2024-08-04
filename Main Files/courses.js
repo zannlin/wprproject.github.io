@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let eOrC = "";
         let modhtml = "";
+        
         if(course.course_code == enrolledCourse){
           eOrC = "Complete";
           

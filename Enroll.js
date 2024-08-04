@@ -102,9 +102,14 @@
                 let cell2 = row.insertCell(1);
                 cell1.textContent = field.label;
                 cell2.textContent = field.value;
-                if(field.label == "Course"){
-                    localStorage.setItem("Course", field.value);
-                }
+                /*if(field.label == "Course"){
+                    if(localStorage.EnrolledCourses){
+                        localStorage.EnrolledCourses = EnrolledCourses + `,${field.value}`;
+                    }
+                    else{
+                        localStorage.EnrolledCourses = field.value;
+                    }
+                }*/
             });
 
             
