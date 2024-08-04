@@ -1,3 +1,24 @@
+#enroll-title-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(Images/enroll_header.png) center/cover no-repeat;
+    text-align: center;
+    height: max(60vh,350px);
+    margin-top: 0;
+    background-size: cover;
+  }
+
+  #enroll-title-section h2 {
+    font-size: 4.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+    margin: 0;
+  }
+
+  .para-container {
+    max-width: 600px;
+    margin: 5vw auto;
+}
 
 .form-container {
     max-width: 600px;
