@@ -232,10 +232,7 @@ function toggleDropdown(dropdownId) {
 }
 
 function enroll(courseName) {
-  console.log('Enroll function called with:', courseName); // Debugging log
   // Store the selected course name in local storage
   localStorage.setItem('selectedCourse', courseName);
-  console.log('Stored in local storage:', localStorage.getItem('selectedCourse')); // Debugging log
-  // Redirect to the enrollment form page
   window.location.href = 'Enroll.html';
 }
