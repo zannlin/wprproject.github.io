@@ -27,7 +27,8 @@ h1 {
 }
 
 .card {
-  width: 20.5rem;
+  min-width: 20.5rem;
+  max-width: 20.5rem;
   height: 32rem;
   background-color: black;
   color: white;
@@ -38,6 +39,26 @@ h1 {
   margin: 1rem;
   display: grid;
   grid-template-rows: 37% 5% 25%;
+}
+
+.card button{
+  padding: 3%;
+}
+
+@media (max-width: 405px) {
+  .card {
+    min-width: 16rem;
+    max-width: 18rem;
+    font-size: larger;
+  }
+
+  .card img {
+    display: none;
+  }
+
+  .card button {
+    margin-top: 2rem;
+  }
 }
 
 .card p {
@@ -71,9 +92,19 @@ h1 {
   display: none;
 }
 
+.completedMod{
+  text-decoration: line-through;
+}
+
 #back {
   margin-left: 20%;
   margin-top: 2%;
+  padding: 0.2rem 1rem; 
+}
+
+.courseDetail button{
+  padding: 0.2rem 1rem;
+  width: 10rem;
 }
 
 /* #region popup heading */
@@ -127,25 +158,101 @@ h2 {
   background-color: #1f1f1f;
   color: white;
   padding: 2rem;
-  /*position: absolute;
-  top: 50%;
-  transform: translateY(-50%);*/
 }
 
-.EnrollCard h3{
+.EnrollCard h3 {
   font-size: 29px;
   margin-top: 1rem;
 }
 
-.EnrollCard button{
+.EnrollCard button {
   width: 15rem;
+  padding: 3%;
 }
 
-.top{
+.top {
   font-size: 13px;
 }
 
-.bottom{
-  font-weight:400;
+.bottom {
+  font-weight: 400;
   font-size: 23px;
+}
+
+.description{
+  max-width: 50rem;
+  text-align: justify;
+}
+
+.lecPic img{
+  margin: 1rem;
+}
+
+.lecName{
+  text-align: center;
+  font-weight: 700;
+}
+
+iframe{
+  width:  100%;
+  margin-top: 2rem;
+}
+
+@media (max-width: 898px){
+  #back {
+    margin-left: 16%;
+  }
+}
+
+
+@media (min-width:520px) and (max-width: 610px) {
+  #Detail{
+    margin-left: 50%;
+  }
+  
+  #Detail div{
+    text-align: center;
+  }
+
+  .lecPic img{
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .lecName{
+    font-size: 90%;
+  }
+
+  #back {
+    margin-left: 12%;
+  }
+  
+  #Detail{
+    width: 150%;
+    margin-right: 55%;
+  }
+}
+
+@media (max-width: 519px) {
+  .lecPic img{
+    width: 6rem;
+    height: 6rem;
+  }
+
+  #back {
+    margin-left: 8%;
+  }
+
+  .description{
+    padding: 0;
+  }
+
+  .lecName{
+    display: none;
+  }
+
+  .lecPic img{
+    margin: 0;
+    padding: 2px;
+  }
 }

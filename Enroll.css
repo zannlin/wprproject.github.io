@@ -1,24 +1,51 @@
+#enroll-title-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(Images/enroll_header.png) center/cover no-repeat;
+    text-align: center;
+    height: max(60vh,350px);
+    margin-top: 0;
+    background-size: cover;
+  }
+
+  #enroll-title-section h2 {
+    font-size: 4.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+    margin: 0;
+  }
+
+  .para-container {
+    max-width: 600px;
+    margin: 5vw auto;
+}
 
 .form-container {
     max-width: 600px;
     margin: 5vw auto;
     padding: 20px;
     background-color: black;
-    border: 1px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-container h2 {
+h2 {
     text-align: center;
     margin-bottom: 20px;
     color: var(--primary-color);
     font-size: 2rem;
 }
 
+p  {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+}
+
 .form-group {
     margin-bottom: 15px;
-    color: var(--primary-color);
+    color: white;
 }
 
 .form-group label {
@@ -32,22 +59,63 @@
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 3px solid #ff3434;
+    color: white;
     box-sizing: border-box;
+    background-color: #1f1f1f;
+    box-shadow: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border: 3px white;
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.form-group option { 
+    color: white;
+    
 }
 
 .form-group-button {
     text-align: center;
+    border: 3px white;
 }
 
-.form-group-button button{
-    padding-top: 6px;
-}
 
 #submit:hover {
     background-color: black;
     border: 1px solid white;
+}
+
+
+#summaryTable {
+    border-collapse: collapse;
+    max-width: 600px;
+    margin: 5vw auto;
+    padding: 20px;
+    background-color: black;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#summaryTable, #summaryTable th, #summaryTable td {
+    border: 1px solid #ff3434;
+    background-color: black;
+    color: white;
+}
+
+#summaryTable th, #summaryTable td {
+    padding: 10px;
+    text-align: left;
+}
+
+#summaryTable th {
+    background-color: #ff3434;
 }
 
 #countdown{
@@ -55,4 +123,9 @@
     color: white;
     font-size: 1.5rem;
     margin-bottom: 10vh;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em;
 }

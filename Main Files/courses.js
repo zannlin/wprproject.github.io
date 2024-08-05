@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("There was a problem with the fetch operation:", error); //catches error and displays it in the console
     });
 
-
+  
   function displayCourses(courses) {
     let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
     courses.forEach((course) => {
@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let lecturers = course.lecturers;
         let modules = course.modules;
         let venues = course.venues;
+        let enrolledCourse = localStorage.getItem("Applied");
 
         let lecRow1 = "";
         lecturers.forEach(lecturer =>{
@@ -91,10 +92,22 @@ document.addEventListener("DOMContentLoaded", function () {
           lecRow2 = `${lecRow2} <td><img src="Images/${lecturer}.jpg" class="profilePhoto"></td>`
         });
 
+        let eOrC = "";
         let modhtml = "";
-        modules.forEach(module =>{
-          modhtml = `${modhtml} <tr><td>${module}</td></tr>`
-        });
+        
+        if(course.title == enrolledCourse){
+          eOrC = "Complete";
+          
+          modules.forEach(module =>{
+            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}"><label for="${module}">${module}</label></td></tr>`
+          });
+        }
+        else{
+          eOrC = "Enroll";
+          modules.forEach(module =>{
+            modhtml = `${modhtml} <tr><td>${module}</td></tr>`
+          });
+        }
 
         let venhtml ="";
         venues.forEach(venue =>{
@@ -103,11 +116,11 @@ document.addEventListener("DOMContentLoaded", function () {
         
         courseInfoblock.innerHTML = ` 
                 <h3>About the course</h3>
-                <p class="desctiption">${course.full_description}</p>
+                <div class="description">${course.full_description}</div>
                 <h3>Lecturers</h3>
                 <table>
-                <tr>${lecRow1}</tr>
-                <tr>${lecRow2}</tr>
+                <tr class="lecName">${lecRow1}</tr>
+                <tr class="lecPic">${lecRow2}</tr>
                 </table>
                 <span class="Modue">
                 <h3>Modules</h3>
@@ -115,9 +128,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Venues</h3>
                 <table>${venhtml}</table>
                 </span>
-
+                <table>
+                <tr><td><button id="printScreen">Print</button></td>
+                <td><a href="Images/WPR 281 Study Guide [2024] v1.4.pdf" download><button>Study Guide</button></a</td></tr>
+                </table>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" height="500" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0"></iframe>
             `;
             parentBlock.appendChild(courseInfoblock);
+
+        
 
         //Heading card,image, and text
         const mainSeg = document.querySelector("#index-title-section");
@@ -131,16 +150,24 @@ document.addEventListener("DOMContentLoaded", function () {
           <p class="bottom">R${course.course_cost_peryear} /year</p>
           <p class="bottom">${course.course_duration}</p>
         </span>
-        <a href="Enroll.html"><button>Enroll</button></a>
+        <a  onclick="enroll('${course.course_code}')"><button>${eOrC}</button></a>
         `;
         mainSeg.appendChild(enrollCard);
 
+        document.getElementById("printScreen").addEventListener("click",()=>{
+          window.print();
+        });
 
+        let checkBoxes = document.querySelectorAll("input[type=checkbox]");
+        checkBoxes.forEach(box =>{
+          box.addEventListener("change", ()=>{
+            document.querySelector(`label[for="${box.name}"]`).classList.add("completedMod");
+          });
+        });
 
         document.getElementById("index-title-section").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('Images/${course.title}.webp') no-repeat scroll center`;
-        document.getElementById("index-title-section").style.backgroundSize =
-          "cover";
+        document.getElementById("index-title-section").style.backgroundSize = "cover";
       }
     });
   }
@@ -202,4 +229,10 @@ function toggleDropdown(dropdownId) {
   } else {
     DropDown.classList.add("show");
   }
+}
+
+function enroll(courseName) {
+  // Store the selected course name in local storage
+  localStorage.setItem('selectedCourse', courseName);
+  window.location.href = 'Enroll.html';
 }

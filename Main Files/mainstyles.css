@@ -2,7 +2,9 @@
   --search_radius: 5rem;
   --search_trans_dur: 0.3s;
   --btn-color: #ff3434;
-  --btn-width: 3rem;
+  --btn-width: 15rem;
+  --btn-height: 1.5rem;
+  --btn-animation-width: 3rem;
   --transparent-color: rgba(0, 0, 0, 0);
   --background-color: #1f1f1f;
   --primary-color: #ff3434;
@@ -14,14 +16,20 @@
   box-sizing: border-box;
 }
 
-button{
-  padding: 10px 20px;
+button {
   border: 0px;
   border-radius: 50px;
   font-size: 1.2rem;
   color: white;
   text-align: center;
   background-color: var(--primary-color);
+}
+
+.section-divider {
+  width: 100vw;
+  overflow: hidden;
+  flex: 1 1 auto; /* Allows divider to grow and shrink as needed */
+  max-width: 100%;
 }
 
 body {
@@ -35,7 +43,7 @@ body {
 header {
   display: flex;
   background-color: var(--background-color);
-  height: 10vh;
+  height: max(10vh,50px);
   padding: 0 5vw;
   border-bottom: 2px solid var(--primary-color);
   z-index: 9999;
@@ -43,7 +51,7 @@ header {
   top: 0;
 }
 
-.navbar{
+.navbar {
   width: 50%;
   margin: auto;
 }
@@ -72,7 +80,8 @@ header nav ul {
 }
 
 header nav ul li {
-  width: max(10%, 75px);
+  width: fit-content;
+  margin-right: 10px;
 }
 
 header nav ul li a {
@@ -93,7 +102,8 @@ header nav ul li a:hover {
 /* Searchbar */
 nav form {
   position: relative;
-  width: 15rem;
+  width: var(--btn-width);
+  height: var(--btn-height);
   background: var(--btn-color);
   border-radius: var(--search_radius);
   border: 2px solid var(--primary-color);
@@ -116,7 +126,6 @@ nav input[type="search"] {
   background-color: black;
   color: white;
   position: relative;
-
   transition: width var(--search_trans_dur),
     border-radius var(--search_trans_dur);
 }
@@ -127,15 +136,13 @@ nav button {
   position: absolute;
   top: 0;
   right: 0;
-  width: var(--btn-width);
+  width: var(--btn-animation-width);
   height: 100%;
   font-weight: bold;
   background: var(--btn-color);
   border-radius: 0 var(--search_radius) var(--search_radius) 0;
   color: white;
-
   z-index: 2; /* Ensures button is above input */
-
   transition: opacity var(--search_trans_dur),
     visibility var(--search_trans_dur), background-color var(--search_trans_dur);
 }
@@ -147,7 +154,7 @@ nav ::placeholder {
 
 nav input:not(:placeholder-shown) {
   border-radius: var(--search_radius) 0 0 var(--search_radius);
-  width: calc(100% - var(--btn-width));
+  width: calc(100% - var(--btn-animation-width));
 }
 
 nav input:not(:placeholder-shown) + button {
@@ -170,7 +177,16 @@ form button {
 }
 /* #endregion */
 
-@media (max-width: 480px) {
+@media (max-width: 299px) {
+  :root {
+    --btn-height: 3rem;
+  }
+
+  nav input,
+  nav button {
+    font-size: large;
+  }
+
   header {
     display: block;
     height: auto;
@@ -178,15 +194,15 @@ form button {
   }
 
   .navbar {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: space-evenly;
   }
 
   header h1 {
     font-size: x-large;
     width: fit-content;
-    margin: 0; 
+    margin: 0;
   }
 
   header nav {
@@ -197,9 +213,9 @@ form button {
   header nav ul {
     flex-direction: column;
     background: linear-gradient(
-      to bottom, /* Direction of the gradient */
-      var(--background-color), /* Starting color */
-      rgba(54, 48, 48, 0.5) /* End color*/
+      to bottom,
+      /* Direction of the gradient */ var(--background-color),
+      /* Starting color */ rgba(54, 48, 48, 0.5) /* End color*/
     );
   }
 
@@ -207,7 +223,7 @@ form button {
     padding: 1% 0;
     width: 100%;
     border-top: 2px solid var(--primary-color);
-  }  
+  }
 
   header nav form {
     display: none;
@@ -222,7 +238,30 @@ form button {
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+
+
+@media (min-width: 300px) and (max-width: 768px) {
+  :root {
+    --btn-height: 3rem;
+  }
+
+  nav form {
+    position: relative;
+    width: var(--btn-width);
+    height: var(--btn-height);
+    background: var(--btn-color);
+    border-radius: var(--search_radius);
+    border: 2px solid var(--primary-color);
+    margin: auto;
+    margin-top: 5%; 
+    z-index: 99;
+  }
+
+  nav input,
+  nav button {
+    font-size: large;
+  }
+
   header {
     display: block;
     height: auto;
@@ -230,15 +269,15 @@ form button {
   }
 
   .navbar {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: space-evenly;
   }
 
   header h1 {
     font-size: x-large;
     width: fit-content;
-    margin: 0; 
+    margin: 0;
   }
 
   header nav {
@@ -249,20 +288,21 @@ form button {
   header nav ul {
     flex-direction: column;
     background: linear-gradient(
-      to bottom, /* Direction of the gradient */
-      var(--background-color), /* Starting color */
-      rgba(54, 48, 48, 0.5) /* End color*/
+      to bottom,
+      /* Direction of the gradient */ var(--background-color),
+      /* Starting color */ rgba(54, 48, 48, 0.5) /* End color*/
     );
   }
 
   header nav ul li {
+    font-size:36pt;
     padding: 1% 0;
     width: 100%;
-    border-top: 2px solid var(--primary-color);
-  }  
+    margin-top: 12%;
+  }
 
-  header nav form {
-    display: none;
+  header ul li:last-of-type {
+    height: 100vh;
   }
 
   .hamburger-btn {
@@ -275,8 +315,6 @@ form button {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-
-
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
@@ -288,7 +326,6 @@ form button {
 #redword {
   color: var(--primary-color);
 }
-
 
 /* #region Footer */
 footer {
@@ -304,12 +341,16 @@ footer {
   padding-top: 10%;
 }
 
-.footer_item1 {
+.footer_item1{
   grid-column: 1 / span 3;
-  color: red;
+  color:#ff3434;
   border-bottom: 3px solid white;
   padding-top: 3.5%;
   padding-bottom: 3.5%;
+}
+
+.footer_item1 h1{
+  color:#ff3434
 }
 
 .footer_item2 {
@@ -327,7 +368,7 @@ footer {
 .Courseblock {
   display: flex;
   align-items: flex-start;
-  gap: 1%; 
+  gap: 1%;
 }
 
 .CourseInfo {
@@ -345,7 +386,6 @@ footer {
 }
 
 .CourseInfo th {
-
   color: #000000;
   padding: 5px;
 }
@@ -357,8 +397,6 @@ footer {
   padding: 5px;
 }
 
-
-
 .CourseDrop {
   margin-top: 20px;
 }
@@ -367,7 +405,6 @@ footer {
   display: none;
   border: 1px solid #dededf;
   padding: 10px;
-
 }
 
 .CourseDrop-content table {
@@ -390,8 +427,15 @@ footer {
   display: flex;
 }
 
-.SubOptInfo{
-  display:inline-block;
+.SubOptInfo {
+  display: inline-block;
   margin-right: 10%;
 }
 /* #endregion */
+
+@media (max-height: 600px){
+  header nav ul li {
+    font-size:18pt;
+    margin-top: 1%;
+  }
+}
