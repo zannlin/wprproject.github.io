@@ -161,7 +161,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let checkBoxes = document.querySelectorAll("input[type=checkbox]");
         checkBoxes.forEach(box =>{
           box.addEventListener("change", ()=>{
-            document.querySelector(`label[for="${box.name}"]`).classList.add("completedMod");
+            if(document.querySelector(`label[for="${box.name}"]`).classList.contains("completedMod")){
+              document.querySelector(`label[for="${box.name}"]`).classList.remove("completedMod");
+            }
+            else{
+              document.querySelector(`label[for="${box.name}"]`).classList.add("completedMod");
+            }
           });
         });
 
