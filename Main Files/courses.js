@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   resetheading();
   let courses = []; //array where the json file's conent will be stored in
+  let completedCourses = []; //All the courrses the user has completed
 
   fetch(
     "https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Code/Main%20Files/Courses.json"
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => {
       if (!response.ok) {
         //if the response is not ok it throws a new error
-        throw new Error("Networkk respons was not ok " + response.statusText);
+        throw new Error("Network respons was not ok " + response.statusText);
       }
       return response.json(); //else it responses with the json file
     })
@@ -69,6 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  let EorCButton;  //Enrolled or Complete button
+
+  //Handles the Read more button on each card
   function handleCourseCicked(clicked, courses) {
     removeAndAdd();
     let parentBlock = document.getElementById("Detail");  //The container in which we will add code into
@@ -95,20 +99,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let eOrC = "";  //Enrolled or Complete
         let modhtml = ""; //modules
-        let EorCButton = '';  //Enrolled or Complete button
-        
+               
+          //determines if the button in the harding card is an enroll card or complete course card
         if(course.title == enrolledCourse){ //If selected course == course name from local storage
           eOrC = "Complete";
-          EorCButton = `<button id='${course.course_code}'>${eOrC}</button></a>`;
-          
-
+          EorCButton = document.createElement("button");
+          EorCButton.id = course.title;
+          EorCButton.innerText=eOrC;       
+                 
+          //creates a table to display all the modules with checkboxes to mark as complete
           modules.forEach(module =>{
-            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}" class="check${course.course_code}"><label for="${module}">${module}</label></td></tr>`
+            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}" class="${course.title}"><label for="${module}">${module}</label></td></tr>`
           });
         }
+        //the button in the heading card is enroll
         else{
           eOrC = "Enroll";
-          EorCButton = `<a  onclick="enroll('${course.course_code}')"><button>${eOrC}</button></a>`;
+          EorCButton = document.createElement("a");
+          EorCButton.id="enroll";
+          EorCButton.innerHTML=`<button>${eOrC}</button>`;
+          EorCButton.addEventListener("click", function(){
+            enroll(course.course_code);
+          })
+
           modules.forEach(module =>{
             modhtml = `${modhtml} <tr><td>${module}</td></tr>`
           });
@@ -155,8 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <p class="bottom">R${course.course_cost_peryear} /year</p>
           <p class="bottom">${course.course_duration}</p>
         </span>
-        ${EorCButton}
         `;
+        enrollCard.appendChild(EorCButton);
         mainSeg.appendChild(enrollCard);
 
         document.getElementById("printScreen").addEventListener("click",()=>{
@@ -173,8 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
             else{
               document.querySelector(`label[for="${box.name}"]`).classList.add("completedMod");
             }
-          });
-
+          }); 
           
         });
 
@@ -183,7 +195,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("index-title-section").style.backgroundSize = "cover";
       }
     });
+
+    completeAll(EorCButton);
+    completeAddTrack(EorCButton);    
   }
+
+  
 
   function resetheading() {
     //adding the heading's img and text
@@ -207,6 +224,40 @@ document.addEventListener("DOMContentLoaded", function () {
     //Adds the back button
     document.querySelector("#back").classList.remove("invisible");
     document.querySelector("#Detail").classList.remove("invisible");
+  }
+
+  function completeAddTrack(button){  //adds and eventlister to the complete button
+    button.addEventListener("click",function(){
+         let classname = button.id;
+      let boxes = document.getElementsByClassName(classname);
+      if(completedCourses.includes(classname)){
+        completedCourses.pop(classname);
+      //For each check box set the to unchecked
+      for(let i = 0;i<boxes.length;i++){
+        boxes[i].checked = false;
+        document.querySelector(`label[for="${boxes[i].name}"]`).classList.remove("completedMod");
+      }
+      }
+      else{
+        completedCourses.push(classname);
+      //For each check box set the to checked
+      for(let i = 0;i<boxes.length;i++){
+        boxes[i].checked = true;
+        document.querySelector(`label[for="${boxes[i].name}"]`).classList.add("completedMod");
+      }
+      }       
+    });
+  }
+
+  function completeAll(element){
+    let classname = element.id;
+    let boxes = document.getElementsByClassName(classname);
+    if(completedCourses.includes(classname)){
+      for(let i = 0;i<boxes.length;i++){
+        boxes[i].checked = true;
+        document.querySelector(`label[for="${boxes[i].name}"]`).classList.add("completedMod");
+      }
+    }
   }
 
   document.getElementById("back").addEventListener("click", function(){GoBack();});
@@ -238,3 +289,4 @@ function enroll(courseName) {
   localStorage.setItem('selectedCourse', courseName);
   window.location.href = 'Enroll.html';
 }
+
