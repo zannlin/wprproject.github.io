@@ -219,17 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
-  
-
-//dropdown
-function toggleDropdown(dropdownId) {
-  let DropDown = document.getElementById(dropdownId);
-  if (DropDown.classList.contains("show")) {
-    DropDown.classList.remove("show");
-  } else {
-    DropDown.classList.add("show");
-  }
-}
 
 function enroll(courseName) {
   // Store the selected course name in local storage
