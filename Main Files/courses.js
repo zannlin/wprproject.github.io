@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     courses.forEach((course) => {
       if (course.course_code == clicked) {
         
+        //declaring variables to store html in
         let lecturers = course.lecturers;
         let modules = course.modules;
         let venues = course.venues;
@@ -84,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let lecRow1 = "";
         lecturers.forEach(lecturer =>{
-          lecRow1 = `${lecRow1} <td>${lecturer}</td>`
+          lecRow1 = `${lecRow1} <td>${lecturer}</td>` //used to split the lecturer name and profile pic
         });
 
         let lecRow2 = "";
@@ -92,18 +93,22 @@ document.addEventListener("DOMContentLoaded", function () {
           lecRow2 = `${lecRow2} <td><img src="Images/${lecturer}.jpg" class="profilePhoto"></td>`
         });
 
-        let eOrC = "";
-        let modhtml = "";
+        let eOrC = "";  //Enrolled or Complete
+        let modhtml = ""; //modules
+        let EorCButton = '';  //Enrolled or Complete button
         
-        if(course.title == enrolledCourse){
+        if(course.title == enrolledCourse){ //If selected course == course name from local storage
           eOrC = "Complete";
+          EorCButton = `<button id='${course.course_code}'>${eOrC}</button></a>`;
           
+
           modules.forEach(module =>{
-            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}"><label for="${module}">${module}</label></td></tr>`
+            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}" class="check${course.course_code}"><label for="${module}">${module}</label></td></tr>`
           });
         }
         else{
           eOrC = "Enroll";
+          EorCButton = `<a  onclick="enroll('${course.course_code}')"><button>${eOrC}</button></a>`;
           modules.forEach(module =>{
             modhtml = `${modhtml} <tr><td>${module}</td></tr>`
           });
@@ -150,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <p class="bottom">R${course.course_cost_peryear} /year</p>
           <p class="bottom">${course.course_duration}</p>
         </span>
-        <a  onclick="enroll('${course.course_code}')"><button>${eOrC}</button></a>
+        ${EorCButton}
         `;
         mainSeg.appendChild(enrollCard);
 
@@ -158,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.print();
         });
 
+        //Finds all the checkboxes on the page and adds an eventlistener to it to add or remove a class
         let checkBoxes = document.querySelectorAll("input[type=checkbox]");
         checkBoxes.forEach(box =>{
           box.addEventListener("change", ()=>{
@@ -168,6 +174,8 @@ document.addEventListener("DOMContentLoaded", function () {
               document.querySelector(`label[for="${box.name}"]`).classList.add("completedMod");
             }
           });
+
+          
         });
 
         document.getElementById("index-title-section").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
