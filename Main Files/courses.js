@@ -29,22 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("There was a problem with the fetch operation:", error); //catches error and displays it in the console
     });
 
-  function searchedCourse() {
-    const searchTerm = localStorage.getItem("searchedCourse");
-
-    const filteredCourse = courses.filter(
-      (course) => course.title.toLowerCase() === searchTerm
-    );
-
-    displayCourses(filteredCourse);
-
-    // Clear the search term from localStorage
-    localStorage.removeItem("searchedCourse");
-  }
-
   function displayCourses(courses) {
     let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
-    courseList.innerHTML = ""; //Clear existing cards, if any exist
+    
     courses.forEach((course) => {
       const courseblock = document.createElement("div");
       courseblock.classList.add("card"); //creates a div for each course
@@ -68,6 +55,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     courseList.classList.remove("invisible");
     trackbutton();
+  }
+
+  function searchedCourse() {
+    const searchTerm = localStorage.getItem("searchedCourse");
+
+    const filteredCourse = courses.filter(
+      (course) => course.title.toLowerCase() === searchTerm
+    );
+
+    let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
+    courseList.innerHTML = ""; //Clear existing cards, if any exist
+    displayCourses(filteredCourse);
+
+    // Clear the search term from localStorage
+    localStorage.removeItem("searchedCourse");
   }
 
   //selected course
