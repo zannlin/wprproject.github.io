@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Checks if data is an array
         courses = data;
         displayCourses(courses); // Sets courses array to the data
+
+        searchedCourse();
       } else {
         throw new Error("Fetched data is not an array"); // if not an array throw new error
       }
@@ -27,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("There was a problem with the fetch operation:", error); //catches error and displays it in the console
     });
 
-  
   function displayCourses(courses) {
     let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
+    
     courses.forEach((course) => {
       const courseblock = document.createElement("div");
       courseblock.classList.add("card"); //creates a div for each course
@@ -51,7 +53,23 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
       courseList.appendChild(courseblock); //Moves each new div to the bottom
     });
+    courseList.classList.remove("invisible");
     trackbutton();
+  }
+
+  function searchedCourse() {
+    const searchTerm = localStorage.getItem("searchedCourse");
+
+    const filteredCourse = courses.filter(
+      (course) => course.title.toLowerCase() === searchTerm
+    );
+
+    let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
+    courseList.innerHTML = ""; //Clear existing cards, if any exist
+    displayCourses(filteredCourse);
+
+    // Clear the search term from localStorage
+    localStorage.removeItem("searchedCourse");
   }
 
   //selected course
@@ -70,17 +88,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  let EorCButton;  //Enrolled or Complete button
+  let EorCButton; //Enrolled or Complete button
 
   //Handles the Read more button on each card
   function handleCourseCicked(clicked, courses) {
     removeAndAdd();
-    let parentBlock = document.getElementById("Detail");  //The container in which we will add code into
-    const courseInfoblock = document.createElement("div");  
+    let parentBlock = document.getElementById("Detail"); //The container in which we will add code into
+    const courseInfoblock = document.createElement("div");
     courseInfoblock.classList.add("courseDetail");
     courses.forEach((course) => {
       if (course.course_code == clicked) {
-        
         //declaring variables to store html in
         let lecturers = course.lecturers;
         let modules = course.modules;
@@ -89,16 +106,16 @@ document.addEventListener("DOMContentLoaded", function () {
         let enrolledArr = enrolledCourse.split(",");        
 
         let lecRow1 = "";
-        lecturers.forEach(lecturer =>{
-          lecRow1 = `${lecRow1} <td>${lecturer}</td>` //used to split the lecturer name and profile pic
+        lecturers.forEach((lecturer) => {
+          lecRow1 = `${lecRow1} <td>${lecturer}</td>`; //used to split the lecturer name and profile pic
         });
 
         let lecRow2 = "";
-        lecturers.forEach(lecturer =>{
-          lecRow2 = `${lecRow2} <td><img src="Images/${lecturer}.jpg" class="profilePhoto"></td>`
+        lecturers.forEach((lecturer) => {
+          lecRow2 = `${lecRow2} <td><img src="Images/${lecturer}.jpg" class="profilePhoto"></td>`;
         });
 
-        let eOrC = "";  //Enrolled or Complete
+        let eOrC = ""; //Enrolled or Complete
         let modhtml = ""; //modules
                
           //determines if the button in the harding card is an enroll card or complete course card
@@ -107,33 +124,33 @@ document.addEventListener("DOMContentLoaded", function () {
           eOrC = "Complete";
           EorCButton = document.createElement("button");
           EorCButton.id = course.title;
-          EorCButton.innerText=eOrC;       
-                 
+          EorCButton.innerText = eOrC;
+
           //creates a table to display all the modules with checkboxes to mark as complete
-          modules.forEach(module =>{
-            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}" class="${course.title}"><label for="${module}">${module}</label></td></tr>`
+          modules.forEach((module) => {
+            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}" class="${course.title}"><label for="${module}">${module}</label></td></tr>`;
           });
         }
         //the button in the heading card is enroll
-        else{
+        else {
           eOrC = "Enroll";
           EorCButton = document.createElement("a");
-          EorCButton.id="enroll";
-          EorCButton.innerHTML=`<button>${eOrC}</button>`;
-          EorCButton.addEventListener("click", function(){
+          EorCButton.id = "enroll";
+          EorCButton.innerHTML = `<button>${eOrC}</button>`;
+          EorCButton.addEventListener("click", function () {
             enroll(course.course_code);
-          })
+          });
 
-          modules.forEach(module =>{
-            modhtml = `${modhtml} <tr><td>${module}</td></tr>`
+          modules.forEach((module) => {
+            modhtml = `${modhtml} <tr><td>${module}</td></tr>`;
           });
         }
 
-        let venhtml ="";
-        venues.forEach(venue =>{
-          venhtml = `${venhtml} <tr><td>${venue}</td></tr>`
+        let venhtml = "";
+        venues.forEach((venue) => {
+          venhtml = `${venhtml} <tr><td>${venue}</td></tr>`;
         });
-        
+
         courseInfoblock.innerHTML = ` 
                 <h3>About the course</h3>
                 <div class="description">${course.full_description}</div>
@@ -154,15 +171,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 </table>
                 <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" height="500" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0"></iframe>
             `;
-            parentBlock.appendChild(courseInfoblock);
-
-        
+        parentBlock.appendChild(courseInfoblock);
 
         //Heading card,image, and text
         const mainSeg = document.querySelector("#index-title-section");
         let enrollCard = document.createElement("div");
         enrollCard.classList.add("EnrollCard");
-        enrollCard.innerHTML=`
+        enrollCard.innerHTML = `
         <h3 class="ECtitle">${course.title}</h3>
         <span class="priceDuration">
           <p class="top">Price</p>
@@ -174,35 +189,42 @@ document.addEventListener("DOMContentLoaded", function () {
         enrollCard.appendChild(EorCButton);
         mainSeg.appendChild(enrollCard);
 
-        document.getElementById("printScreen").addEventListener("click",()=>{
+        document.getElementById("printScreen").addEventListener("click", () => {
           window.print();
         });
 
         //Finds all the checkboxes on the page and adds an eventlistener to it to add or remove a class
         let checkBoxes = document.querySelectorAll("input[type=checkbox]");
-        checkBoxes.forEach(box =>{
-          box.addEventListener("change", ()=>{
-            if(document.querySelector(`label[for="${box.name}"]`).classList.contains("completedMod")){
-              document.querySelector(`label[for="${box.name}"]`).classList.remove("completedMod");
+        checkBoxes.forEach((box) => {
+          box.addEventListener("change", () => {
+            if (
+              document
+                .querySelector(`label[for="${box.name}"]`)
+                .classList.contains("completedMod")
+            ) {
+              document
+                .querySelector(`label[for="${box.name}"]`)
+                .classList.remove("completedMod");
+            } else {
+              document
+                .querySelector(`label[for="${box.name}"]`)
+                .classList.add("completedMod");
             }
-            else{
-              document.querySelector(`label[for="${box.name}"]`).classList.add("completedMod");
-            }
-          }); 
-          
+          });
         });
 
-        document.getElementById("index-title-section").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        document.getElementById(
+          "index-title-section"
+        ).style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('Images/${course.title}.webp') no-repeat scroll center`;
-        document.getElementById("index-title-section").style.backgroundSize = "cover";
+        document.getElementById("index-title-section").style.backgroundSize =
+          "cover";
       }
     });
 
     completeAll(EorCButton);
-    completeAddTrack(EorCButton);    
+    completeAddTrack(EorCButton);
   }
-
-  
 
   function resetheading() {
     //adding the heading's img and text
@@ -221,51 +243,61 @@ document.addEventListener("DOMContentLoaded", function () {
     cards.forEach((element) => {
       element.classList.add("invisible");
     });
-    document.querySelector("#index-title-section h2").classList.add("invisible");
+    document
+      .querySelector("#index-title-section h2")
+      .classList.add("invisible");
 
     //Adds the back button
     document.querySelector("#back").classList.remove("invisible");
     document.querySelector("#Detail").classList.remove("invisible");
   }
 
-  function completeAddTrack(button){  //adds and eventlister to the complete button
-    button.addEventListener("click",function(){
-         let classname = button.id;
+  function completeAddTrack(button) {
+    //adds and eventlister to the complete button
+    button.addEventListener("click", function () {
+      let classname = button.id;
       let boxes = document.getElementsByClassName(classname);
-      if(completedCourses.includes(classname)){
+      if (completedCourses.includes(classname)) {
         completedCourses.pop(classname);
-      //For each check box set the to unchecked
-      for(let i = 0;i<boxes.length;i++){
-        boxes[i].checked = false;
-        document.querySelector(`label[for="${boxes[i].name}"]`).classList.remove("completedMod");
-      }
-      }
-      else{
+        //For each check box set the to unchecked
+        for (let i = 0; i < boxes.length; i++) {
+          boxes[i].checked = false;
+          document
+            .querySelector(`label[for="${boxes[i].name}"]`)
+            .classList.remove("completedMod");
+        }
+      } else {
         completedCourses.push(classname);
-      //For each check box set the to checked
-      for(let i = 0;i<boxes.length;i++){
-        boxes[i].checked = true;
-        document.querySelector(`label[for="${boxes[i].name}"]`).classList.add("completedMod");
+        //For each check box set the to checked
+        for (let i = 0; i < boxes.length; i++) {
+          boxes[i].checked = true;
+          document
+            .querySelector(`label[for="${boxes[i].name}"]`)
+            .classList.add("completedMod");
+        }
       }
-      }       
     });
   }
 
-  function completeAll(element){
+  function completeAll(element) {
     let classname = element.id;
     let boxes = document.getElementsByClassName(classname);
-    if(completedCourses.includes(classname)){
-      for(let i = 0;i<boxes.length;i++){
+    if (completedCourses.includes(classname)) {
+      for (let i = 0; i < boxes.length; i++) {
         boxes[i].checked = true;
-        document.querySelector(`label[for="${boxes[i].name}"]`).classList.add("completedMod");
+        document
+          .querySelector(`label[for="${boxes[i].name}"]`)
+          .classList.add("completedMod");
       }
     }
   }
 
-  document.getElementById("back").addEventListener("click", function(){GoBack();});
+  document.getElementById("back").addEventListener("click", function () {
+    GoBack();
+  });
 
   //Turn every thing back to normal
-  function GoBack(){
+  function GoBack() {
     //resets the heading background
     resetheading();
 
@@ -275,20 +307,20 @@ document.addEventListener("DOMContentLoaded", function () {
       element.classList.remove("invisible");
     });
 
-    document.querySelector("#index-title-section h2").classList.remove("invisible");
-    
-    //Removes back button, course detail text  
+    document
+      .querySelector("#index-title-section h2")
+      .classList.remove("invisible");
+
+    //Removes back button, course detail text
     document.querySelector("#back").classList.add("invisible");
     document.querySelector(".courseDetail").remove();
     document.getElementById("Detail").classList.add("invisible");
     document.querySelector(".EnrollCard").remove();
   }
-
 });
 
 function enroll(courseName) {
   // Store the selected course name in local storage
-  localStorage.setItem('selectedCourse', courseName);
-  window.location.href = 'Enroll.html';
+  localStorage.setItem("selectedCourse", courseName);
+  window.location.href = "Enroll.html";
 }
-

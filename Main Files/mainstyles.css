@@ -102,6 +102,7 @@ header nav ul li a:hover {
 .hamburger-btn {
   display: none;
 }
+/* #endregion */
 
 /* #region Searchbar */
 nav form {
