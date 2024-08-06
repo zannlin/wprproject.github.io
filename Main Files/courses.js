@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           //creates a table to display all the modules with checkboxes to mark as complete
           modules.forEach((module) => {
-            modhtml = `${modhtml} <tr><td><input type="checkbox" name="${module}" class="${course.title}"><label for="${module}">${module}</label></td></tr>`;
+            modhtml = `${modhtml} <tr><td><div class="mod"><input type="checkbox" name="${module}" class="${course.title}"><label for="${module}" class="checklable">${module}</lable></div></td></tr>`;
           });
         }
         //the button in the heading card is enroll
@@ -174,7 +174,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 </table>
                 <span class="Modue">
                 <h3>Modules</h3>
-                <table>${modhtml}</table>
+                <table class="modules">${modhtml}</table>
+                <table class="completedMods "><tr><td><h4>Completed Modules</h4></td></tr></table>
                 <h3>Venues</h3>
                 <table>${venhtml}</table>
                 </span>
@@ -208,20 +209,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //Finds all the checkboxes on the page and adds an eventlistener to it to add or remove a class
         let checkBoxes = document.querySelectorAll("input[type=checkbox]");
+        let completed = document.querySelector("h4").parentElement.parentElement.parentElement;
         checkBoxes.forEach((box) => {
           box.addEventListener("change", () => {
-            if (
-              document
-                .querySelector(`label[for="${box.name}"]`)
-                .classList.contains("completedMod")
-            ) {
-              document
-                .querySelector(`label[for="${box.name}"]`)
-                .classList.remove("completedMod");
-            } else {
-              document
-                .querySelector(`label[for="${box.name}"]`)
-                .classList.add("completedMod");
+            let label = document.querySelector(`label[for="${box.name}"]`);
+            let originalRow = label.parentElement.parentElement.parentElement;
+        
+            if (label.classList.contains("completedMod")) {// Uncheck remove completedMod class, remove invisible class, and delete newRow
+              label.classList.remove("completedMod");
+              originalRow.classList.remove("invisible");
+              
+              let newRow = completed.querySelector(`input[name="${box.name}"]`).parentElement.parentElement.parentElement;
+              newRow.remove();
+            }
+            else { //Check add completedMod class add invisible class, and create newRow
+              label.classList.add("completedMod");
+              originalRow.classList.add("invisible");
+
+              let newRow = document.createElement("tr");
+              newRow.classList.add("dupMod");
+              newRow.innerHTML = originalRow.innerHTML;
+
+              completed.appendChild(newRow);
+        
+              let newBox = newRow.querySelector("input[type=checkbox]");  //the check box inside new row searching inside newRow
+              newBox.addEventListener("change", () => {
+                if (newBox.checked) {
+                  label.classList.remove("completedMod");
+                  originalRow.classList.remove("invisible");
+
+                  originalRow.querySelector("input[type=checkbox]").checked = false;  //earch inside of original row
+                  newRow.remove();
+                }
+
+                else {
+                  label.classList.add("completedMod");
+                  originalRow.classList.add("invisible");
+                }
+              });
             }
           });
         });
@@ -234,7 +259,6 @@ document.addEventListener("DOMContentLoaded", function () {
           "cover";
       }
     });
-
     completeAll(EorCButton);
     completeAddTrack(EorCButton);
   }
@@ -268,6 +292,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function completeAddTrack(button) {
     //adds and eventlister to the complete button
     button.addEventListener("click", function () {
+      let comps = document.querySelectorAll(".dupMod");
+      comps.forEach(comp =>{
+        comp.remove();
+      });
       let classname = button.id;
       let boxes = document.getElementsByClassName(classname);
       if (completedCourses.includes(classname)) {
@@ -278,6 +306,8 @@ document.addEventListener("DOMContentLoaded", function () {
           document
             .querySelector(`label[for="${boxes[i].name}"]`)
             .classList.remove("completedMod");
+            boxes[i].parentElement.parentElement.parentElement.classList.remove("invisible");
+            boxes[i].disabled = false;
         }
       } else {
         completedCourses.push(classname);
@@ -287,23 +317,28 @@ document.addEventListener("DOMContentLoaded", function () {
           document
             .querySelector(`label[for="${boxes[i].name}"]`)
             .classList.add("completedMod");
+            boxes[i].parentElement.parentElement.parentElement.classList.remove("invisible");
+            boxes[i].disabled = true;
         }
       }
     });
   }
 
   function completeAll(element) {
+    let comps = document.querySelectorAll(".dupMod");
+      comps.forEach(comp =>{
+        comp.remove();
+      });
     let classname = element.id;
     let boxes = document.getElementsByClassName(classname);
     if (completedCourses.includes(classname)) {
       for (let i = 0; i < boxes.length; i++) {
         boxes[i].checked = true;
-        document
-          .querySelector(`label[for="${boxes[i].name}"]`)
-          .classList.add("completedMod");
+        document.querySelector(`label[for="${boxes[i].name}"]`).classList.add("completedMod");
       }
     }
   }
+
 
   document.getElementById("back").addEventListener("click", function () {
     GoBack();

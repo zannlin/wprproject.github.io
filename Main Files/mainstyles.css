@@ -24,6 +24,7 @@ button {
   text-align: center;
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
+  cursor: pointer;
 }
 
 .section-divider {

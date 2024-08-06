@@ -146,10 +146,19 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
+  margin-bottom: 1rem;
 }
 
 .Modue h3 {
   grid-row: 1;
+}
+
+@media (max-width: 616px){
+  .Modue{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25%;
+  }
 }
 
 .EnrollCard {
@@ -210,9 +219,7 @@ iframe{
     margin-left: 50%;
   }
   
-  #Detail div{
-    text-align: center;
-  }
+  
 
   .lecPic img{
     width: 8rem;
@@ -255,4 +262,16 @@ iframe{
     margin: 0;
     padding: 2px;
   }
+}
+
+.mod{
+  background-color:#272727;
+  width: 75%;
+  border: 0px;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: white;
+  text-align: left;
+  height:3rem;
+  padding-top: 1rem;
 }
