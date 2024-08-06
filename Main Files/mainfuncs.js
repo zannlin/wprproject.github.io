@@ -54,5 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "./Courses.html";
       return;
     }
+    else{
+      localStorage.setItem("searchedCourse", searchTerm);
+      window.location.href = "./Courses.html";
+    }
   }
 });

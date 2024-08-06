@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   resetheading();
   let courses = []; //array where the json file's conent will be stored in
   let completedCourses = []; //All the courrses the user has completed
+  let filteredCourse = [];
 
   fetch(
     "https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Code/Main%20Files/Courses.json"
@@ -15,12 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then((data) => {
       //handles the promise returned by response.json
-      if (Array.isArray(data)) {
+      if (data && Array.isArray(data.courses)) {
         // Checks if data is an array
-        courses = data;
-        displayCourses(courses); // Sets courses array to the data
-
-        searchedCourse();
+        courses = data.courses;
+        displayOrSearch(courses);
+        // Sets courses array to the data
       } else {
         throw new Error("Fetched data is not an array"); // if not an array throw new error
       }
@@ -28,6 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error); //catches error and displays it in the console
     });
+
+    function displayOrSearch(){
+      if(localStorage.searchedCourse){
+        searchedCourse(courses);
+      }
+      else{
+        displayCourses(courses);
+      }
+    }
 
   function displayCourses(courses) {
     let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
@@ -57,19 +66,23 @@ document.addEventListener("DOMContentLoaded", function () {
     trackbutton();
   }
 
-  function searchedCourse() {
-    const searchTerm = localStorage.getItem("searchedCourse");
 
-    const filteredCourse = courses.filter(
-      (course) => course.title.toLowerCase() === searchTerm
-    );
+  function searchedCourse(courses) {
+    let searchTerm = localStorage.getItem("searchedCourse");
+    filteredCourse = courses.filter(course =>
+      course.title.toLowerCase() === searchTerm); //filters the courses array to find a matching course
 
-    let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
-    courseList.innerHTML = ""; //Clear existing cards, if any exist
-    displayCourses(filteredCourse);
+    if(filteredCourse.length > 0){
+      displayCourses(filteredCourse);
+    }
+    else{
+      alert("Course not found");
+      displayCourses(courses);
+    }
 
     // Clear the search term from localStorage
     localStorage.removeItem("searchedCourse");
+    
   }
 
   //selected course
