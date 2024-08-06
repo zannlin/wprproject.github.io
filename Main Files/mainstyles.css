@@ -92,7 +92,7 @@ header nav ul li a:hover {
   display: none;
 }
 
-/* Searchbar */
+/* #region Searchbar */
 nav form {
   position: relative;
   width: var(--btn-width);

@@ -24,15 +24,18 @@
          </ul>
         
          <form role="search">
-           <input
-             id="search"
-             type="search"
-             placeholder="Search..."
-             autofocus
-             required
-           />
-           <button type="submit"><i class="fas fa-search"></i></button>
-         </form>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search..."
+              autofocus
+              autocomplete="off"
+              list="courseList_enroll" 
+              required
+            />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+          <datalist id="courseList_enroll"></datalist>
        
        </nav>
      </header>
