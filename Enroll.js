@@ -146,5 +146,11 @@
     });
 
     function addToLocalStorage(value){
-        localStorage.setItem("Applied", value);
+        if(localStorage.Applied){
+            localStorage.Applied=localStorage.getItem("Applied") + "," + value;
+        }
+        else{
+            localStorage.setItem("Applied", value);
+        }
+        console.log(localStorage.getItem("Applied"));
     }

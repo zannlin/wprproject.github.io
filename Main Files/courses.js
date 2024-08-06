@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let modules = course.modules;
         let venues = course.venues;
         let enrolledCourse = localStorage.getItem("Applied");
+        let enrolledArr = enrolledCourse.split(",");        
 
         let lecRow1 = "";
         lecturers.forEach((lecturer) => {
@@ -114,10 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let eOrC = ""; //Enrolled or Complete
         let modhtml = ""; //modules
+               
+          //determines if the button in the harding card is an enroll card or complete course card
 
-        //determines if the button in the harding card is an enroll card or complete course card
-        if (course.title == enrolledCourse) {
-          //If selected course == course name from local storage
+       if(enrolledArr.includes(course.title)){  //If selected array from local storage includes the course title
           eOrC = "Complete";
           EorCButton = document.createElement("button");
           EorCButton.id = course.title;
