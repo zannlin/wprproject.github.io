@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(
       "index-title-section"
     ).style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url('Images/home_header.jpg') no-repeat scroll center`;
+  url('Images/courses_header.jpg') no-repeat scroll center`;
     document.getElementById("index-title-section").style.backgroundSize =
       "cover";
   }
