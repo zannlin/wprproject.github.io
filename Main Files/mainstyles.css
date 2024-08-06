@@ -23,6 +23,14 @@ button {
   color: white;
   text-align: center;
   background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.section-divider {
+  width: 100vw;
+  overflow: hidden;
+  flex: 1 1 auto; /* Allows divider to grow and shrink as needed */
+  max-width: 100%;
 }
 
 body {
@@ -86,6 +94,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
   color: var(--primary-color);
+  transition: 0.5s;
 }
 
 .hamburger-btn {
@@ -321,40 +330,77 @@ form button {
 }
 
 /* #region Footer */
+.menu a{
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.menu a:hover{
+  color: var(--primary-color);
+  transition: 0.5s;
+}
+
 footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding-left: 2%;
-  padding-right: 2%;
   background-color: var(--background-color);
-  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 10px;
+  margin-top: auto;
+  border-top: 3px solid var(--primary-color);
 }
 
-.footer_item {
-  padding-top: 10%;
+footer a {
+  text-decoration: none;
+  color: var(--primary-color);
 }
 
-.footer_item1{
-  grid-column: 1 / span 3;
-  color:#ff3434;
-  border-bottom: 3px solid white;
-  padding-top: 3.5%;
-  padding-bottom: 3.5%;
+footer li {
+  list-style: none;
+  margin: 10px;
+  display: inline-block;
 }
 
-.footer_item1 h1{
-  color:#ff3434
+.footer-copyright {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 15px;
+  margin-top: 10px;
+  text-transform: capitalize;
 }
 
-.footer_item2 {
-  border-right: 2px solid white;
+.footer-copyright p {
+  margin-bottom: 0px;
 }
 
-.footer_item3 {
-  padding-left: 7.5%;
-  border-right: 2px solid white;
+/* Responsive styling */
+@media (max-width: 768px) {
+  footer {
+      padding: 10px;
+  }
+
+  footer ul {
+      padding: 0;
+  }
+
+  footer li {
+      display: block;
+      margin: 5px 0;
+  }
 }
-/* #endregion */
+
+@media (max-width: 480px) {
+  footer {
+      padding: 5px;
+  }
+
+  .footer-content {
+      padding: 10px;
+  }
+
+  footer a {
+      display: block;
+      margin: 5px 0;
+  }
+}
 
 /* #region CourseBody */
 
