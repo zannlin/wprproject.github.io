@@ -177,8 +177,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <table class="modules">${modhtml}</table>
                 <table class="completedMods "><tr><td><h4>Completed Modules</h4></td></tr></table>
                 <h3>Venues</h3>
-                <table>${venhtml}</table>
-                </span>
+                <table class="venues">${venhtml}</table>
+                </span>                
                 <table>
                 <tr><td><button id="printScreen">Print</button></td>
                 <td><a href="Images/WPR 281 Study Guide [2024] v1.4.pdf" download><button>Study Guide</button></a</td></tr>
