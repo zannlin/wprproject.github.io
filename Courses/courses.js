@@ -349,6 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document
           .querySelector(`label[for="${boxes[i].name}"]`)
           .classList.add("completedMod");
+          boxes[i].disabled = true;
       }
     }
   }
