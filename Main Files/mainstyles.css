@@ -27,6 +27,11 @@ button {
   cursor: pointer;
 }
 
+button:hover{
+  border: 1px solid white;
+  background-color: #000000;
+}
+
 .section-divider {
   width: 100vw;
   overflow: hidden;
@@ -170,6 +175,7 @@ nav input:not(:placeholder-shown) + button {
 
 nav button:hover {
   background-color: var(--btn-hover-color); /* Change color on hover */
+  border: 1px solid var(--btn-color)
 }
 
 nav button:active {
