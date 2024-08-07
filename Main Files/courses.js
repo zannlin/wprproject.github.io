@@ -178,11 +178,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <table class="completedMods "><tr><td><h4>Completed Modules</h4></td></tr></table>
                 <h3>Venues</h3>
                 <table class="venues">${venhtml}</table>
-                </span>                
-                <table>
+                <table class="butts">
                 <tr><td><button id="printScreen">Print</button></td>
                 <td><a href="Images/WPR 281 Study Guide [2024] v1.4.pdf" download><button>Study Guide</button></a</td></tr>
                 </table>
+                </span>                
+                
                 <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" height="500" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0"></iframe>
             `;
         parentBlock.appendChild(courseInfoblock);

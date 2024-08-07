@@ -145,7 +145,7 @@ h2 {
 .Modue {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   margin-bottom: 1rem;
 }
 
@@ -153,9 +153,15 @@ h2 {
   grid-row: 1;
 }
 
+.butts{
+  grid-column: 2;
+  grid-row: 3;
+}
+
 .completedMods{
   margin-bottom: 1rem;
   grid-column: 1;
+  grid-row: 3;
 }
 
 @media (max-width: 616px){
