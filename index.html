@@ -1,24 +1,183 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Main Files/mainstyles.css">
-    <style src="Main Files/mainfuncs.js"></style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./Main_Files/mainstyles.css" />
+    <link rel="stylesheet" href="Index/index.css" />
     <title>WPR281 Project</title>
-</head>
-<body>
- <header>
-    <nav>
-     <h1>Testing website</h1>
-    </nav>
- </header>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <h1>StartSmart University</h1>
+        <button class="hamburger-btn">&#9776;</button>
+      </div>
 
- <footer>
+      <nav>
+        <ul>
+          <li><a href="index.html" id="redword">Home</a></li>
+          <li><a href="./Courses/Courses.html">Courses</a></li>
+          <li><a href="./Enroll/Enroll.html">Enroll</a></li>
+        </ul>
 
- </footer>
- <script href="Main Files/mainfuncs.js"></script>
- <script href="Index.js"></script>
-</body>
+        <form role="search">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search..."
+            autofocus
+            autocomplete="off"
+            list="courseList_index"
+            required
+          />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <datalist id="courseList_index">
+          <option value="Higher Certificate in IT"></option>
+          <option value="Diploma in Game Development"></option>
+          <option value="BSc in Computer Science"></option>
+          <option value="Masters in Computer Science"></option>
+        </datalist>
+      </nav>
+    </header>
+
+    <section id="index-title-section">
+      <h2>Start your Journey Today...</h2>
+      <p id="title-p">The <i>Smart</i> Way</p>
+    </section>
+
+    <section id="index-howitworks-section">
+      <h2 class="grid-item grid-item1">Learning Re-imagined</h2>
+      <img class="grid-item grid-item2" src="./Images/home_section_1.png" />
+      <div class="grid-item grid-item3">
+        <h3>Education Beyond Books</h3>
+        <p>
+          Embark on a journey of flexible learning with our institution, where
+          we prioritize your educational needs and lifestyle. At StartSmart
+          University, we understand that every learner is unique, which is why
+          we offer high-value education tailored to your individual
+          circumstances. Our innovative approach allows you to progress at your
+          own pace, ensuring that you can balance your studies with other
+          commitments. Whether you're pursuing a new career path or advancing in
+          your current field, our programs are designed to provide you with the
+          skills and knowledge you need to succeed, all with the convenience and
+          flexibility that modern learners demand. Join us at StartSmart
+          University and experience an education that adapts to you.
+        </p>
+      </div>
+    </section>
+
+    <section id="index-learn-section">
+      <img
+        class="section-divider"
+        src="./Images/section_divider.png"
+        alt="simple section divider"
+      />
+    </section>
+
+    <section id="index-services-section">
+      <div class="grid-item grid-item1">
+        <h2>Courses</h2>
+        <p>
+          StartSmart University offers four cutting edge courses, which won't
+          just empty your wallet, but empower your career too!
+        </p>
+      </div>
+
+      <div class="grid-item grid-item2">
+        <img src="./Images/hand.png" />
+        <h4>Higher Certificate in I.T</h4>
+        <p>
+          Get started with the basics of everything you need to know to thrive
+          as an IT Specialist.
+        </p>
+      </div>
+      <div class="grid-item grid-item3">
+        <img src="./Images/controller.png" />
+        <h4>Diploma in Game Design</h4>
+        <p>
+          Learn the ins and outs of turning an idea into a full-fledged game.
+        </p>
+      </div>
+      <div class="grid-item grid-item4">
+        <img src="./Images/code.png" />
+        <h4>BSc Computer Science</h4>
+        <p>
+          Dive deep into the complexities of computers and Software Engineering.
+        </p>
+      </div>
+      <div class="grid-item grid-item5">
+        <img src="./Images/monitor.png" />
+        <h4>Masters in Computer Science</h4>
+        <p>
+          Further your knowledge of Software Engineering, Computers, and closely
+          related topics.
+        </p>
+      </div>
+    </section>
+    <div id="learnMoreBtn">
+      <a href="Courses/Courses.html"><button>Learn More</button></a>
+    </div>
+    <section id="index-learn-section">
+      <img
+        class="section-divider"
+        src="./Images/section_divider.png"
+        alt="simple section divider"
+      />
+    </section>
+
+    <section id="index-testimonial-section">
+      <div class="grid-item grid-item1">
+        <h2>Student Stories</h2>
+        <p id="tinyRedText">
+          Don't listen to what we say. Listen to what THEY say...
+        </p>
+
+        <p>
+          Discover what our students have to say about their experience. Their
+          feedback speaks volumes about the quality of education we provide.
+          Read on to hear directly from our satisfied learners:
+        </p>
+      </div>
+
+      <div class="grid-item grid-item2">Payton Hillman</div>
+
+      <div class="grid-item grid-item3">Avery Smith</div>
+      <div class="grid-item grid-item4">Jessie Brown</div>
+      <div class="grid-item grid-item5">
+        <p>
+          I never thought learning could be so engaging and enriching.
+          StartSmart University has truly changed my perspective on education.
+        </p>
+      </div>
+      <div class="grid-item grid-item6">
+        <p>
+          The support and resources available at StartSmart University have made
+          my learning journey smooth and rewarding. I highly recommend it to
+          anyone seeking a flexible yet comprehensive education.
+        </p>
+      </div>
+      <div class="grid-item grid-item7">
+        <p>
+          StartSmart University has exceeded my expectations in every way. The
+          courses are well-structured, and the instructors are highly
+          knowledgeable. I'm proud to be a part of this institution.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+          <div class="footer-copyright">
+              <p>Copyright @ 2024 | StartSmart University</p>
+          </div>
+  </footer>
+
+    <script src="./Main_Files/mainfuncs.js"></script>
+    <script src="/Index/Index.js"></script>
+  </body>
 </html>

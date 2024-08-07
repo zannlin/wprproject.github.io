@@ -1,0 +1,116 @@
+{
+  "courses": [
+      {
+        "title": "Higher Certificate in IT",
+        "full_description": "The Higher Certificate in IT provides a comprehensive introduction to the field of information technology. This one-year program is designed to equip students with essential IT skills, making them proficient in software development, networking, and database management. Ideal for those seeking entry-level positions or wishing to further their studies, this course lays a solid foundation in both theoretical knowledge and practical application.",
+        "modules": [
+          "Introduction to Programming",
+          "Computer Networks",
+          "Database Fundamentals",
+          "Web Development Basics",
+          "IT Support and Maintenance",
+          "Information Systems",
+          "Professional Practice in IT"
+        ],
+        "course_duration": "1 year",
+        "course_cost_peryear": 53000,
+        "course_code": "HCIT100",
+        "lecturers": [
+          "ElonMusk",
+          "FlintLockwood",
+          "CreepyGuyfromfacebook"
+        ],
+        "venues": [
+          "Lecture Hall A, Main Building",
+          "Computer Lab 1, IT Wing",
+          "Computer Lab 2, IT Wing"
+        ],
+        "short_discription":"Gain essential IT skills in software development, networking, and database management. Ideal for entry-level roles or further studies."
+      },
+      {
+        "title": "Diploma in Game Development",
+        "full_description": "The Diploma in Game Development is a two-year program designed to immerse students in the exciting world of game design and development. Through a combination of theory and practical experience, students will learn the intricacies of game programming, design, and multimedia production. Graduates will be well-equipped to enter the gaming industry with a strong portfolio of work and a deep understanding of the game development process.",
+        "modules": [
+          "Game Design Principles",
+          "Introduction to Game Programming",
+          "Advanced Game Programming",
+          "3D Modeling and Animation",
+          "Game Audio Design",
+          "Game Project Management",
+          "Game Development Project"
+        ],
+        "course_duration": "2 years",
+        "course_cost_peryear": 55000, 
+        "course_code": "DGD200",
+        "lecturers": [
+          "Spongebob",
+          "Reghard",
+          "FlintLockwood"
+        ],
+        "venues": [
+          "Game Design Studio, Creative Arts Building",
+          "Computer Lab 3, IT Wing",
+          "Multimedia Lab, Creative Arts Building"
+        ],
+        "short_discription":"Receive hands-on training in game design, programming, and multimedia production. Prepare for a career in the gaming industry."
+      },
+      {
+        "title": "BSc in Computer Science",
+        "full_description": "The Bachelor of Science in Computer Science is a three-year program that delves into the core and advanced aspects of computer science. This degree offers a robust curriculum covering topics from algorithms and data structures to artificial intelligence and machine learning. Students will engage in both theoretical studies and practical projects, preparing them for diverse careers in technology, research, and development sectors.",
+        "modules": [
+          "Introduction to Computer Science",
+          "Data Structures and Algorithms",
+          "Computer Architecture",
+          "Operating Systems",
+          "Software Engineering",
+          "Database Systems",
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Networks and Security",
+          "Capstone Project"
+        ],
+        "course_duration": "3 years",
+        "course_cost_peryear": 78000,
+        "course_code": "BSC301",
+        "lecturers": [
+          "Stuart",
+          "Rassie",
+          "FlintLockwood"
+        ],
+        "venues": [
+          "Lecture Hall B, Main Building",
+          "Computer Lab 4, IT Wing",
+          "Research Lab, Science Building"
+        ],
+        "short_discription":"Explore advanced topics like algorithms, data structures, and AI. Prepare for careers in technology, research, and development."
+      },
+      {
+        "title": "Masters in Computer Science",
+        "full_description": "The Masters in Computer Science program offers an advanced study of computer science, providing students with in-depth knowledge and skills in areas such as algorithms, machine learning, data science, and cybersecurity. This two-year program is designed for students who wish to deepen their understanding of computer science and prepare for leadership roles in technology, research, and academia. Through a combination of coursework, research, and practical projects, students will gain expertise in both theoretical concepts and real-world applications.",
+        "modules": [
+          "Advanced Algorithms",
+          "Machine Learning and Artificial Intelligence",
+          "Data Science and Big Data Analytics",
+          "Advanced Software Engineering",
+          "Cybersecurity and Cryptography",
+          "Cloud Computing and Virtualization",
+          "Research Methods in Computer Science",
+          "Thesis Project"
+        ],
+        "course_duration":"2 years",
+        "course_cost_peryear":  69000,
+        "course_code": "MSC500",
+        "lecturers": [
+          "BrokeOldGuy",
+          "Joker",
+          "FlintLockwood"
+        ],
+        "venues": [
+          "Lecture Hall C, Graduate Building",
+          "Advanced Computing Lab, Research Wing",
+          "Data Science Lab, Science Building"
+        ],
+        "short_discription":"Focus on algorithms, machine learning, data science, and cybersecurity. Prepare for leadership roles in technology and research."
+      }
+] 
+}
