@@ -1,4 +1,5 @@
-[
+{
+  "courses": [
       {
         "title": "Higher Certificate in IT",
         "full_description": "The Higher Certificate in IT provides a comprehensive introduction to the field of information technology. This one-year program is designed to equip students with essential IT skills, making them proficient in software development, networking, and database management. Ideal for those seeking entry-level positions or wishing to further their studies, this course lays a solid foundation in both theoretical knowledge and practical application.",
@@ -112,3 +113,4 @@
         "short_discription":"Focus on algorithms, machine learning, data science, and cybersecurity. Prepare for leadership roles in technology and research."
       }
 ] 
+}

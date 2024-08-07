@@ -133,6 +133,7 @@
                 
                 document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining until the course starts.`;
             }
+            
 
             let timerInterval = setInterval(updateCountdown, 1000);
             updateCountdown(); // Initial call to set the countdown right away
@@ -146,5 +147,11 @@
     });
 
     function addToLocalStorage(value){
-        localStorage.setItem("Applied", value);
+        if(localStorage.Applied){
+            localStorage.Applied=localStorage.getItem("Applied") + "," + value;
+        }
+        else{
+            localStorage.setItem("Applied", value);
+        }
+        console.log(localStorage.getItem("Applied"));
     }

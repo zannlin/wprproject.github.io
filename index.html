@@ -7,8 +7,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="Main Files/mainstyles.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./Main_Files/mainstyles.css" />
+    <link rel="stylesheet" href="Index/index.css" />
     <title>WPR281 Project</title>
   </head>
   <body>
@@ -21,8 +21,8 @@
       <nav>
         <ul>
           <li><a href="index.html" id="redword">Home</a></li>
-          <li><a href="Courses.html">Courses</a></li>
-          <li><a href="Enroll.html">Enroll</a></li>
+          <li><a href="./Courses/Courses.html">Courses</a></li>
+          <li><a href="./Enroll/Enroll.html">Enroll</a></li>
         </ul>
 
         <form role="search">
@@ -31,10 +31,18 @@
             type="search"
             placeholder="Search..."
             autofocus
+            autocomplete="off"
+            list="courseList_index"
             required
           />
           <button type="submit"><i class="fas fa-search"></i></button>
         </form>
+        <datalist id="courseList_index">
+          <option value="Higher Certificate in IT"></option>
+          <option value="Diploma in Game Development"></option>
+          <option value="BSc in Computer Science"></option>
+          <option value="Masters in Computer Science"></option>
+        </datalist>
       </nav>
     </header>
 
@@ -47,16 +55,19 @@
       <h2 class="grid-item grid-item1">Learning Re-imagined</h2>
       <img class="grid-item grid-item2" src="./Images/home_section_1.png" />
       <div class="grid-item grid-item3">
-        <h3>Education beyond books</h3>
+        <h3>Education Beyond Books</h3>
         <p>
-          Embark on a journey of flexible learning with our institution, where we prioritize your
-          educational needs and lifestyle. At StartSmart University, we understand that every 
-          learner is unique, which is why we offer high-value education tailored to your individual
-          circumstances. Our innovative approach allows you to progress at your own pace, ensuring
-          that you can balance your studies with other commitments. Whether you're pursuing a new career path or 
-          advancing in your current field, our programs are designed to provide you with the skills
-          and knowledge you need to succeed, all with the convenience and flexibility that modern learners demand. 
-          Join us at StartSmart University and experience an education that adapts to you.
+          Embark on a journey of flexible learning with our institution, where
+          we prioritize your educational needs and lifestyle. At StartSmart
+          University, we understand that every learner is unique, which is why
+          we offer high-value education tailored to your individual
+          circumstances. Our innovative approach allows you to progress at your
+          own pace, ensuring that you can balance your studies with other
+          commitments. Whether you're pursuing a new career path or advancing in
+          your current field, our programs are designed to provide you with the
+          skills and knowledge you need to succeed, all with the convenience and
+          flexibility that modern learners demand. Join us at StartSmart
+          University and experience an education that adapts to you.
         </p>
       </div>
     </section>
@@ -64,7 +75,7 @@
     <section id="index-learn-section">
       <img
         class="section-divider"
-        src="Images/section_divider.png"
+        src="./Images/section_divider.png"
         alt="simple section divider"
       />
     </section>
@@ -104,17 +115,18 @@
         <img src="./Images/monitor.png" />
         <h4>Masters in Computer Science</h4>
         <p>
-          Further your knowledge of Software Engineering, Computers, and closely related topics.
+          Further your knowledge of Software Engineering, Computers, and closely
+          related topics.
         </p>
       </div>
     </section>
     <div id="learnMoreBtn">
-      <a href="Courses.html"><button >Learn More</button></a>
+      <a href="Courses/Courses.html"><button>Learn More</button></a>
     </div>
     <section id="index-learn-section">
       <img
         class="section-divider"
-        src="Images/section_divider.png"
+        src="./Images/section_divider.png"
         alt="simple section divider"
       />
     </section>
@@ -159,27 +171,13 @@
       </div>
     </section>
 
-    <section id="index-learn-section">
-      <img
-        class="section-divider"
-        src="Images/section_divider.png"
-        alt="simple section divider"
-      />
-    </section>
-
     <footer>
-      <div class="footer_item1"><h1>StartSmart University</h1></div>
-      <div class="footer_item footer_item2">
-        123-456-7890<br />info@mysite.com
-      </div>
-      <div class="footer_item footer_item3">
-        500 Terry Francine Street,<br />6th Floor, San Francisco,<br />
-        CA 94158
-      </div>
-      <div class="footer_item footer_item4"></div>
-    </footer>
+          <div class="footer-copyright">
+              <p>Copyright @ 2024 | StartSmart University</p>
+          </div>
+  </footer>
 
-    <script src="Main Files/mainfuncs.js"></script>
-    <script src="Index.js"></script>
+    <script src="./Main_Files/mainfuncs.js"></script>
+    <script src="/Index/Index.js"></script>
   </body>
 </html>

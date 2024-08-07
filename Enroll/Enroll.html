@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../Main_Files/mainstyles.css" />
+    <link rel="stylesheet" href="Enroll.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <h1>StartSmart University</h1>
+        <button class="hamburger-btn">&#9776;</button>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../Courses/Courses.html">Courses</a></li>
+          <li><a href="../Enroll/Enroll.html" id="redword">Enroll</a></li>
+        </ul>
+
+        <form role="search">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search..."
+            autofocus
+            autocomplete="off"
+            list="courseList_enroll"
+            required
+          />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <datalist id="courseList_enroll">
+          <option value="Higher Certificate in IT"></option>
+          <option value="Diploma in Game Development"></option>
+          <option value="BSc in Computer Science"></option>
+          <option value="Masters in Computer Science"></option>
+        </datalist>
+      </nav>
+    </header>
+
+    <section id="enroll-title-section">
+      <h2>Enrollment Form</h2>
+    </section>
+    <div class="para-container">
+      <p>
+        Please apply here with your full name and email address. Also include a
+        short paragraph serving as motivation for why you want to study at
+        StartSmart University.
+      </p>
+    </div>
+    <div class="form-container">
+      <form id="enrollmentForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          <span class="error-message" id="name-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="surname">Surname</label>
+          <input type="text" id="surname" name="surname" required />
+          <span class="error-message" id="surname-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" required />
+          <span class="error-message" id="email-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="\d{10}"
+            title="Phone number must be 10 digits"
+          />
+          <span class="error-message" id="phone-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="course">Course</label>
+          <select id="courseDropdown" name="course" required>
+            <option value="">Select a course</option>
+            <option value="HCIT100">Higher Certificate in IT</option>
+            <option value="DGD200">Diploma in Game Development</option>
+            <option value="BSC301">BSc in Computer Science</option>
+            <option value="MSC500">Masters in Computer Science</option>
+          </select>
+          <span class="error-message" id="course-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Reason for Enrollment</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <span class="error-message" id="message-error"></span>
+        </div>
+        <div class="form-group-button">
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="summarySection" style="display: none;">
+        <h2>Summary of Your Enrollment</h2>
+        <p>Thank you for applying at <i>StartSmart University</i>!!! <br>We will contact you within two business days with more information and instructions.</p>
+        <table id="summaryTable">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Summary rows will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="countdown"></div>
+
+    <footer>
+          <div class="footer-copyright">
+              <p>Copyright @ 2024 | StartSmart University</p>
+          </div>
+  </footer>
+    <script src="../Main_Files/mainfuncs.js"></script>
+    <script src="Enroll.js"></script>
+  </body>
+</html>
