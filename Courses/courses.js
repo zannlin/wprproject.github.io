@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let filteredCourse = [];
 
   fetch(
-    "https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Code/Main_Files/Courses.json"
+    "https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Code/Courses/Courses.json"
   ) //fetch the json file from github
     .then((response) => {
       if (!response.ok) {
