@@ -1,6 +1,6 @@
 #enroll-title-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(Images/enroll_header.png) center/cover no-repeat;
+      url(../Images/enroll_header.png) center/cover no-repeat;
     text-align: center;
     height: max(60vh,350px);
     margin-top: 0;

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let filteredCourse = [];
 
   fetch(
-    "https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Code/Main%20Files/Courses.json"
+    "https://raw.githubusercontent.com/zannlin/wprproject.github.io/Adding-Code/Main_Files/Courses.json"
   ) //fetch the json file from github
     .then((response) => {
       if (!response.ok) {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //Below is where you would insert the html code of the course while using the json file for the course details
       //Ads content inside the div
       courseblock.innerHTML = `   
-                <img src="Images/${course.title}.webp">
+                <img src="../Images/${course.title}.webp">
                 <div class="card-body">
                   <h3 class="card-title">${course.title}</h3>
                   <p class="discription">${course.short_discription}</p>
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let lecRow2 = "";
         lecturers.forEach((lecturer) => {
-          lecRow2 = `${lecRow2} <td><img src="Images/${lecturer}.jpg" class="profilePhoto"></td>`;
+          lecRow2 = `${lecRow2} <td><img src="../Images/${lecturer}.jpg" class="profilePhoto"></td>`;
         });
 
         let eOrC = ""; //Enrolled or Complete
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <table class="venues">${venhtml}</table>
                 <table class="butts">
                 <tr><td><button id="printScreen">Print</button></td>
-                <td><a href="Images/WPR 281 Study Guide [2024] v1.4.pdf" download><button>Study Guide</button></a</td></tr>
+                <td><a href="../Images/WPR 281 Study Guide [2024] v1.4.pdf" download><button>Study Guide</button></a</td></tr>
                 </table>
                 </span>                
                 
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
           "index-title-section"
         ).style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('Images/${course.title}.webp') no-repeat scroll center`;
+        url('../Images/${course.title}.webp') no-repeat scroll center`;
         document.getElementById("index-title-section").style.backgroundSize =
           "cover";
       }
@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(
       "index-title-section"
     ).style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url('Images/courses_header.jpg') no-repeat scroll center`;
+  url('../Images/courses_header.jpg') no-repeat scroll center`;
     document.getElementById("index-title-section").style.backgroundSize =
       "cover";
   }
