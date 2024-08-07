@@ -50,12 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (page !== "Courses.html") {
       localStorage.setItem("searchedCourse", searchTerm);
-      window.location.href = "./Courses.html";
+      window.location.href = "./Courses/Courses.html";
       return;
     }
     else{
       localStorage.setItem("searchedCourse", searchTerm);
-      window.location.href = "./Courses.html";
+      window.location.href = "./Courses/Courses.html";
     }
   }
 });
