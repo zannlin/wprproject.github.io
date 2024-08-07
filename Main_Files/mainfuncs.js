@@ -36,6 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
     handleResize();
   });
 
+  document.querySelector(".footer-copyright p").addEventListener("click", function(){
+    localStorage.clear();  
+  });
+
   const searchBar = document.querySelector('form[role="search"]');
   searchBar.addEventListener("submit", initiateSearch);
 
