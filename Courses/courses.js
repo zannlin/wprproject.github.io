@@ -383,5 +383,5 @@ document.addEventListener("DOMContentLoaded", function () {
 function enroll(courseName) {
   // Store the selected course name in local storage
   localStorage.setItem("selectedCourse", courseName);
-  window.location.href = "Enroll.html";
+  window.location.href = "../Enroll/Enroll.html";
 }
