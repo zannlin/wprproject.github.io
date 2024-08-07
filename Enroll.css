@@ -59,7 +59,7 @@ p  {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: none;
+    border: 3px transparent;
     border-bottom: 3px solid #ff3434;
     color: white;
     box-sizing: border-box;
@@ -67,10 +67,15 @@ p  {
     box-shadow: none;
 }
 
+.form-group textarea{
+    resize: vertical;
+}
+
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border: 3px white;
+    border: none;
+    margin-bottom: 4px;
     background-color: #1f1f1f;
     color: white;
 }

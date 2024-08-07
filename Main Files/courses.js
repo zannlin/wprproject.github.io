@@ -29,18 +29,17 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("There was a problem with the fetch operation:", error); //catches error and displays it in the console
     });
 
-    function displayOrSearch(){
-      if(localStorage.searchedCourse){
-        searchedCourse(courses);
-      }
-      else{
-        displayCourses(courses);
-      }
+  function displayOrSearch() {
+    if (localStorage.searchedCourse) {
+      searchedCourse(courses);
+    } else {
+      displayCourses(courses);
     }
+  }
 
   function displayCourses(courses) {
     let courseList = document.getElementById("courses"); //courselist is set to a div with courses as an id
-    
+
     courses.forEach((course) => {
       const courseblock = document.createElement("div");
       courseblock.classList.add("card"); //creates a div for each course
@@ -66,23 +65,21 @@ document.addEventListener("DOMContentLoaded", function () {
     trackbutton();
   }
 
-
   function searchedCourse(courses) {
     let searchTerm = localStorage.getItem("searchedCourse");
-    filteredCourse = courses.filter(course =>
-      course.title.toLowerCase() === searchTerm); //filters the courses array to find a matching course
+    filteredCourse = courses.filter(
+      (course) => course.title.toLowerCase() === searchTerm
+    ); //filters the courses array to find a matching course
 
-    if(filteredCourse.length > 0){
+    if (filteredCourse.length > 0) {
       displayCourses(filteredCourse);
-    }
-    else{
+    } else {
       alert("Course not found");
       displayCourses(courses);
     }
 
     // Clear the search term from localStorage
     localStorage.removeItem("searchedCourse");
-    
   }
 
   //selected course
@@ -109,14 +106,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let parentBlock = document.getElementById("Detail"); //The container in which we will add code into
     const courseInfoblock = document.createElement("div");
     courseInfoblock.classList.add("courseDetail");
+
+    let enrolledCourse = localStorage.getItem("Applied");
+    let enrolledArr = [];
+    if (enrolledCourse !== null) {
+      enrolledArr = enrolledCourse.split(",");
+    }
+
     courses.forEach((course) => {
       if (course.course_code == clicked) {
         //declaring variables to store html in
         let lecturers = course.lecturers;
         let modules = course.modules;
         let venues = course.venues;
-        let enrolledCourse = localStorage.getItem("Applied");
-        let enrolledArr = enrolledCourse.split(",");        
 
         let lecRow1 = "";
         lecturers.forEach((lecturer) => {
@@ -130,10 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let eOrC = ""; //Enrolled or Complete
         let modhtml = ""; //modules
-               
-          //determines if the button in the harding card is an enroll card or complete course card
 
-       if(enrolledArr.includes(course.title)){  //If selected array from local storage includes the course title
+        //determines if the button in the harding card is an enroll card or complete course card
+
+        if (enrolledArr.includes(course.title)) {
+          //If selected array from local storage includes the course title
           eOrC = "Complete";
           EorCButton = document.createElement("button");
           EorCButton.id = course.title;
@@ -210,20 +213,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //Finds all the checkboxes on the page and adds an eventlistener to it to add or remove a class
         let checkBoxes = document.querySelectorAll("input[type=checkbox]");
-        let completed = document.querySelector("h4").parentElement.parentElement.parentElement;
+        let completed =
+          document.querySelector("h4").parentElement.parentElement
+            .parentElement;
         checkBoxes.forEach((box) => {
           box.addEventListener("change", () => {
             let label = document.querySelector(`label[for="${box.name}"]`);
             let originalRow = label.parentElement.parentElement.parentElement;
-        
-            if (label.classList.contains("completedMod")) {// Uncheck remove completedMod class, remove invisible class, and delete newRow
+
+            if (label.classList.contains("completedMod")) {
+              // Uncheck remove completedMod class, remove invisible class, and delete newRow
               label.classList.remove("completedMod");
               originalRow.classList.remove("invisible");
-              
-              let newRow = completed.querySelector(`input[name="${box.name}"]`).parentElement.parentElement.parentElement;
+
+              let newRow = completed.querySelector(`input[name="${box.name}"]`)
+                .parentElement.parentElement.parentElement;
               newRow.remove();
-            }
-            else { //Check add completedMod class add invisible class, and create newRow
+            } else {
+              //Check add completedMod class add invisible class, and create newRow
               label.classList.add("completedMod");
               originalRow.classList.add("invisible");
 
@@ -232,18 +239,18 @@ document.addEventListener("DOMContentLoaded", function () {
               newRow.innerHTML = originalRow.innerHTML;
 
               completed.appendChild(newRow);
-        
-              let newBox = newRow.querySelector("input[type=checkbox]");  //the check box inside new row searching inside newRow
+
+              let newBox = newRow.querySelector("input[type=checkbox]"); //the check box inside new row searching inside newRow
               newBox.addEventListener("change", () => {
                 if (newBox.checked) {
                   label.classList.remove("completedMod");
                   originalRow.classList.remove("invisible");
 
-                  originalRow.querySelector("input[type=checkbox]").checked = false;  //earch inside of original row
+                  originalRow.querySelector(
+                    "input[type=checkbox]"
+                  ).checked = false; //earch inside of original row
                   newRow.remove();
-                }
-
-                else {
+                } else {
                   label.classList.add("completedMod");
                   originalRow.classList.add("invisible");
                 }
@@ -294,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //adds and eventlister to the complete button
     button.addEventListener("click", function () {
       let comps = document.querySelectorAll(".dupMod");
-      comps.forEach(comp =>{
+      comps.forEach((comp) => {
         comp.remove();
       });
       let classname = button.id;
@@ -307,8 +314,10 @@ document.addEventListener("DOMContentLoaded", function () {
           document
             .querySelector(`label[for="${boxes[i].name}"]`)
             .classList.remove("completedMod");
-            boxes[i].parentElement.parentElement.parentElement.classList.remove("invisible");
-            boxes[i].disabled = false;
+          boxes[i].parentElement.parentElement.parentElement.classList.remove(
+            "invisible"
+          );
+          boxes[i].disabled = false;
         }
       } else {
         completedCourses.push(classname);
@@ -318,8 +327,10 @@ document.addEventListener("DOMContentLoaded", function () {
           document
             .querySelector(`label[for="${boxes[i].name}"]`)
             .classList.add("completedMod");
-            boxes[i].parentElement.parentElement.parentElement.classList.remove("invisible");
-            boxes[i].disabled = true;
+          boxes[i].parentElement.parentElement.parentElement.classList.remove(
+            "invisible"
+          );
+          boxes[i].disabled = true;
         }
       }
     });
@@ -327,19 +338,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function completeAll(element) {
     let comps = document.querySelectorAll(".dupMod");
-      comps.forEach(comp =>{
-        comp.remove();
-      });
+    comps.forEach((comp) => {
+      comp.remove();
+    });
     let classname = element.id;
     let boxes = document.getElementsByClassName(classname);
     if (completedCourses.includes(classname)) {
       for (let i = 0; i < boxes.length; i++) {
         boxes[i].checked = true;
-        document.querySelector(`label[for="${boxes[i].name}"]`).classList.add("completedMod");
+        document
+          .querySelector(`label[for="${boxes[i].name}"]`)
+          .classList.add("completedMod");
       }
     }
   }
-
 
   document.getElementById("back").addEventListener("click", function () {
     GoBack();

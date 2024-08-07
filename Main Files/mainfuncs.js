@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   hamburgerBTN.addEventListener("click", () => {
     hamburgerBTN.classList.toggle("active");
 
-    // Toggle display of the navigation
     nav.style.display = nav.style.display === "block" ? "none" : "block";
 
     // Move the search form before the ul when menu is opened
